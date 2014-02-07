@@ -1,0 +1,20 @@
+/* Menu Fixes */
+.sf-menu ul.sub-menu {
+	border-bottom: none;	
+}
+.sf-menu li li a, .sf-menu li li a:visited, .sf-menu li li li a, .sf-menu li li li a:visited {
+	border-style:solid;	
+	text-transform:none;
+}
+.isotope-hidden {
+	display:none;
+}
+
+/* Fix Responsive Bug */
+#gallery-5 .gallery-item {
+width: 305px;
+}
+#sitecontainer img { 
+  width: 100% !important; 
+  height: auto; 
+}

@@ -1,0 +1,1143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aware Wordpress Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-21 14:50-0600\n"
+"PO-Revision-Date: 2013-10-21 14:51-0600\n"
+"Last-Translator: Andre Gagnon <support@designcirc.us>\n"
+"Language-Team: 2winfactor <support@designcirc.us>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;__;_e;__e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+msgid "Try searching for it:"
+msgstr ""
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:17 ../functions/templates/onecol.php:27
+msgid "Comments"
+msgstr ""
+
+#: ../comments.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:49
+msgid "Submit a Comment"
+msgstr ""
+
+#: ../comments.php:55 ../template-contact.php:128
+#: ../functions/widgets/widget-contact.php:80
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:59
+msgid "Mail"
+msgstr ""
+
+#: ../comments.php:62
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:66 ../template-contact.php:147
+msgid "Message"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Logout."
+msgstr ""
+
+#: ../comments.php:78
+msgid "Cancel reply"
+msgstr ""
+
+#: ../comments.php:79
+msgid "Post Comment"
+msgstr ""
+
+#: ../functions.php:658 ../functions.php:688
+#: ../functions/templates/threecol.php:55
+#: ../functions/templates/threecol.php:58 ../functions/templates/twocol.php:55
+#: ../functions/templates/twocol.php:58
+msgid "Read More"
+msgstr "Continue Reading"
+
+#: ../functions.php:704
+msgid "Parallax Optimized"
+msgstr ""
+
+#: ../functions.php:705
+msgid "Full-Width Cropped"
+msgstr ""
+
+#: ../functions.php:706
+msgid "Full-Width UnCropped"
+msgstr ""
+
+#: ../functions.php:788
+msgid "Gallery Type"
+msgstr ""
+
+#: ../functions.php:794
+#: ../framework/admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr ""
+
+#: ../functions.php:795
+msgid "Slideshow"
+msgstr ""
+
+#: ../functions.php:796
+msgid "Carousel"
+msgstr ""
+
+#: ../functions.php:810
+msgid "Cropping"
+msgstr ""
+
+#: ../functions.php:816
+msgid "Crop Images"
+msgstr ""
+
+#: ../functions.php:817
+msgid "Do Not Crop Images"
+msgstr ""
+
+#: ../functions.php:831
+msgid "Width"
+msgstr ""
+
+#: ../functions.php:837
+msgid "Extended Width"
+msgstr ""
+
+#: ../functions.php:838
+msgid "Full Width"
+msgstr ""
+
+#: ../functions.php:839
+msgid "Normal Width"
+msgstr ""
+
+#: ../functions.php:853
+msgid "Link"
+msgstr ""
+
+#: ../functions.php:859
+msgid "Full Image"
+msgstr ""
+
+#: ../functions.php:860
+msgid "None"
+msgstr ""
+
+#: ../functions.php:922
+msgid "Reply"
+msgstr ""
+
+#: ../functions.php:926
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:1191 ../options.php:114
+msgid "Portfolio"
+msgstr ""
+
+#: ../functions.php:1192
+msgid "Portfolio Item"
+msgstr ""
+
+#: ../functions.php:1193
+msgid "Add New"
+msgstr ""
+
+#: ../functions.php:1194
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: ../functions.php:1195
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:1196
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: ../functions.php:1197
+msgid "New Portfolio Item"
+msgstr ""
+
+#: ../functions.php:1198
+msgid "View Portfolio"
+msgstr ""
+
+#: ../functions.php:1199
+msgid "View Portfolio Item"
+msgstr ""
+
+#: ../functions.php:1200
+msgid "Search Portfolio Items"
+msgstr ""
+
+#: ../functions.php:1201
+msgid "No Portfolios found"
+msgstr ""
+
+#: ../functions.php:1202
+msgid "No Portfolio Items found in Trash"
+msgstr ""
+
+#: ../functions.php:1203
+msgid "Parent Portfolio"
+msgstr ""
+
+#: ../functions.php:1265 ../functions.php:1290
+msgid "No"
+msgstr ""
+
+#: ../functions.php:1287
+msgid "Featured"
+msgstr ""
+
+#: ../functions.php:1291
+msgid "Yes"
+msgstr ""
+
+#: ../functions.php:1384
+msgid "Search Filters"
+msgstr ""
+
+#: ../functions.php:1385
+msgid "All Filters"
+msgstr ""
+
+#: ../functions.php:1386
+msgid "Parent Filter"
+msgstr ""
+
+#: ../functions.php:1387
+msgid "Parent Filter:"
+msgstr ""
+
+#: ../functions.php:1388
+msgid "Edit Filter"
+msgstr ""
+
+#: ../functions.php:1389
+msgid "Update Filter"
+msgstr ""
+
+#: ../functions.php:1390
+msgid "Add New Filter"
+msgstr ""
+
+#: ../functions.php:1391
+msgid "New Filter Name"
+msgstr ""
+
+#: ../functions.php:1392
+msgid "Filters"
+msgstr ""
+
+#: ../functions.php:1507
+#, php-format
+msgid "View all projects filed under %s"
+msgstr ""
+
+#: ../functions.php:1519
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr ""
+
+#: ../functions.php:1634
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:164
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../functions.php:1635
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:165
+msgid "Install Plugins"
+msgstr ""
+
+#: ../functions.php:1636
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../functions.php:1637
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../functions.php:1648
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:178
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:490
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../functions.php:1649
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:179
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1846
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../functions.php:1650
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: ../header.php:50
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../header.php:83
+msgid "Please enable javascript to view this site."
+msgstr ""
+
+#: ../header.php:103
+msgid "Top"
+msgstr ""
+
+#: ../header.php:150
+msgid "Navigation"
+msgstr ""
+
+#: ../header.php:155
+msgid "Hide Navigation"
+msgstr ""
+
+#: ../options.php:52
+msgid "General"
+msgstr ""
+
+#: ../options.php:55
+msgid "Custom Logo"
+msgstr ""
+
+#: ../options.php:61
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../options.php:68
+msgid "Tracking Code"
+msgstr ""
+
+#: ../options.php:74
+msgid "Customize"
+msgstr ""
+
+#: ../options.php:77
+msgid "Maximum Number of Image Slides per Thumbnail Slideshow"
+msgstr ""
+
+#: ../options.php:83
+msgid "Dropdown Menu Text"
+msgstr ""
+
+#: ../options.php:89
+msgid "Custom CSS"
+msgstr ""
+
+#: ../options.php:95
+msgid "Homepage"
+msgstr ""
+
+#: ../options.php:98
+msgid "Homepage Thumbnails Slider Autoplay"
+msgstr ""
+
+#: ../options.php:108
+msgid "Number of Homepage Featured Items per Page."
+msgstr ""
+
+#: ../options.php:117
+msgid "Portfolio Thumbnails Slider Autoplay"
+msgstr ""
+
+#: ../options.php:127
+msgid "Posts Per Page"
+msgstr ""
+
+#: ../options.php:133
+msgid "Blog"
+msgstr ""
+
+#: ../options.php:137
+msgid "Blog Style"
+msgstr ""
+
+#: ../options.php:148
+msgid "Forms"
+msgstr ""
+
+#: ../options.php:151
+msgid "Contact Email Address"
+msgstr ""
+
+#: ../options.php:157
+msgid "Successfully Sent Heading"
+msgstr ""
+
+#: ../options.php:163
+msgid "Successfully Sent Description"
+msgstr ""
+
+#: ../options.php:169
+msgid "Basic Spam Question"
+msgstr ""
+
+#: ../options.php:179
+msgid "Fonts"
+msgstr ""
+
+#: ../options.php:182
+msgid "Navigation Font"
+msgstr ""
+
+#: ../options.php:188
+msgid "Page Title Font"
+msgstr ""
+
+#: ../options.php:194
+msgid "Page Subtitle Font"
+msgstr ""
+
+#: ../options.php:200
+msgid "Content Area Heading Font"
+msgstr ""
+
+#: ../options.php:206
+msgid "Content Area Subheading Font"
+msgstr ""
+
+#: ../options.php:212
+msgid "Caption Font"
+msgstr ""
+
+#: ../options.php:218
+msgid "Button Font"
+msgstr ""
+
+#: ../options.php:224
+msgid "Tiny Details Font"
+msgstr ""
+
+#: ../options.php:230
+msgid "Paragraphs and Body Font"
+msgstr ""
+
+#: ../options.php:236
+msgid "Latin/Cyrillic Character Support"
+msgstr ""
+
+#: ../options.php:246
+msgid "Ajax"
+msgstr ""
+
+#: ../options.php:249
+msgid "Ajax Page Loading"
+msgstr ""
+
+#: ../options.php:259
+msgid "Updates"
+msgstr ""
+
+#: ../options.php:262
+msgid "Themeforest Username"
+msgstr ""
+
+#: ../options.php:268
+msgid "Themeforest API Key"
+msgstr ""
+
+#: ../searchform.php:4
+msgid "To search type and hit enter"
+msgstr ""
+
+#: ../single-portfolio.php:9 ../single.php:13
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: ../taxonomy-filter.php:122 ../taxonomy-sort.php:111
+#: ../template-home-fixed.php:84 ../template-home.php:91
+#: ../template-portfolio-fixed.php:117 ../template-portfolio.php:114
+msgid "Load More Posts"
+msgstr ""
+
+#: ../template-contact.php:30
+msgid "You forgot to fill in your name"
+msgstr ""
+
+#: ../template-contact.php:40
+msgid "Your forgot to fill in your email address"
+msgstr ""
+
+#: ../template-contact.php:44
+msgid "Wrong email format"
+msgstr ""
+
+#: ../template-contact.php:55
+msgid "Please try answering this again."
+msgstr ""
+
+#: ../template-contact.php:63
+msgid "You forgot to fill in your message"
+msgstr ""
+
+#: ../template-contact.php:77
+msgid "Contact from your site"
+msgstr ""
+
+#: ../template-contact.php:116
+msgid "There were errors in the form."
+msgstr ""
+
+#: ../template-contact.php:117
+msgid "Please try again."
+msgstr ""
+
+#: ../template-contact.php:137
+msgid "Email"
+msgstr ""
+
+#: ../template-contact.php:159
+msgid "What is 5 - 1?"
+msgstr ""
+
+#: ../template-contact.php:171
+msgid "Send Message"
+msgstr ""
+
+#: ../template-home-fixed.php:33 ../template-home.php:36
+#: ../template-portfolio-fixed.php:59 ../template-portfolio.php:56
+msgid "All"
+msgstr ""
+
+#: ../framework/framework.php:331
+msgid "Views"
+msgstr ""
+
+#: ../framework/framework.php:607
+msgid "Please enter your Envato Marketplace Username."
+msgstr ""
+
+#: ../framework/framework.php:611
+msgid "Please enter your Envato Marketplace API Key."
+msgstr ""
+
+#: ../framework/framework.php:636
+msgid "The API \"set\" is a required parameter."
+msgstr ""
+
+#: ../framework/framework.php:707
+msgid "The Envato Marketplace \"item ID\" is a required parameter."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:108
+msgid "Import / Export"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:111
+msgid "Import Settings"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:113
+msgid ""
+"If you have settings in a backup file on your computer, the Import / Export "
+"system can import those into this site. To get started, upload your backup "
+"file to import from below."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:118
+#, php-format
+msgid "Upload File: (Maximum Size: %s)"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:121
+msgid "Upload File and Import"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:127
+msgid "Export Settings"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:129
+msgid ""
+"When you click the button below, the Import / Export system will create a "
+"text file for you to save to your computer."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:130
+#, php-format
+msgid ""
+"This text file can be used to restore your settings here on \"%s\", or to "
+"easily setup another website with the same settings\"."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:135
+msgid "Download Export File"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:159
+msgid "Welcome to the OptionsFramework Backup Manager."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:160
+msgid "Here are a few notes on using this screen."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:161
+msgid ""
+"The backup manager allows you to backup or restore your \"Theme Options\" "
+"and other settings to or from a text file."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:162
+msgid ""
+"To create a backup, simply select the setting type you'd like to backup (or "
+"\"All Settings\") and hit the \"Download Export File\" button."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:163
+msgid ""
+"To restore your settings from a backup, browse your computer for the file "
+"(under the \"Import Settings\" heading) and hit the \"Upload File and Import"
+"\" button. This will restore only the settings that have changed since the "
+"backup."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:165
+msgid ""
+"Please note that only valid backup files generated through the "
+"OptionsFramework Backup Manager should be imported."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:167
+msgid "Looking for assistance?"
+msgstr ""
+
+#: ../framework/admin/options-backup.php:168
+#, php-format
+msgid ""
+"Please post your query on the %sSupport Forums%s where we will do our best "
+"to assist you further."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:188
+#, php-format
+msgid ""
+"Please note that this backup manager backs up only your settings and not "
+"your content. To backup your content, please use the %sWordPress Export Tool"
+"%s."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:191
+msgid "There was a problem importing your settings. Please Try again."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:193
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:195
+msgid "The import file you've provided is invalid. Please try again."
+msgstr ""
+
+#: ../framework/admin/options-backup.php:197
+#, php-format
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr ""
+
+#: ../framework/admin/options-framework.php:258
+#: ../framework/admin/options-framework.php:267
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../framework/admin/options-framework.php:299
+msgid "Default options restored."
+msgstr ""
+
+#: ../framework/admin/options-framework.php:340
+msgid "Options saved"
+msgstr ""
+
+#: ../framework/admin/options-framework.php:399
+msgid "Theme Options"
+msgstr ""
+
+#: ../framework/admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: ../framework/admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: ../framework/admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: ../framework/admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: ../framework/framework-functions/class-reorder.php:106
+#: ../framework/framework-functions/drag-drop-order.php:76
+msgid "Reorder"
+msgstr ""
+
+#: ../framework/framework-functions/class-reorder.php:263
+msgid "Expand"
+msgstr ""
+
+#: ../framework/framework-functions/class-reorder.php:264
+msgid "Collapse"
+msgstr ""
+
+#: ../framework/framework-functions/class-reorder.php:417
+msgid "Drag and drop to reorder your posts. Changes are automatically saved."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:517
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1956
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1956
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../framework/framework-functions/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../framework/framework-functions/drag-drop-order.php:73
+#: ../framework/framework-functions/drag-drop-order.php:88
+msgid "Reorder Posts"
+msgstr ""
+
+#: ../framework/framework-functions/drag-drop-order.php:91
+msgid "Featured Order"
+msgstr ""
+
+#: ../framework/framework-functions/multi-post-thumbnails.php:77
+#, php-format
+msgid ""
+"The 'label' and 'id' values of the 'args' parameter of '%s::%s()' are "
+"required"
+msgstr ""
+
+#: ../framework/framework-functions/multi-post-thumbnails.php:159
+#, php-format
+msgid "Set as %3$s"
+msgstr ""
+
+#: ../functions/customfields.php:52 ../functions/help/contextual-help.php:12
+msgid "Page Title Options"
+msgstr ""
+
+#: ../functions/customfields.php:58
+msgid "Title Text Color"
+msgstr ""
+
+#: ../functions/customfields.php:65
+msgid "Title Background Overlay Color"
+msgstr ""
+
+#: ../functions/customfields.php:72
+msgid "Background Color Opacity"
+msgstr ""
+
+#: ../functions/customfields.php:84 ../functions/customfields.php:90
+msgid "Page Intro"
+msgstr ""
+
+#: ../functions/customfields.php:92
+msgid "This replaces the page title. Add more than one for a text slideshow."
+msgstr ""
+
+#: ../functions/customfields.php:96
+msgid "Intro Autoplay"
+msgstr ""
+
+#: ../functions/customfields.php:98
+msgid "Choose your autoplay option for your page intro carousel."
+msgstr ""
+
+#: ../functions/customfields.php:103
+msgid "Autoplay Delay"
+msgstr ""
+
+#: ../functions/customfields.php:106
+msgid "Enter the number of seconds for your autoplay delay."
+msgstr ""
+
+#: ../functions/customfields.php:133 ../functions/customfields.php:149
+msgid "Feature on Homepage"
+msgstr ""
+
+#: ../functions/customfields.php:166
+msgid "Post Options"
+msgstr ""
+
+#: ../functions/customfields.php:172
+msgid "Post Subheadline"
+msgstr ""
+
+#: ../functions/customfields.php:179 ../functions/customfields.php:218
+msgid "Featured Thumbnail Size"
+msgstr ""
+
+#: ../functions/customfields.php:186 ../functions/customfields.php:225
+msgid "Single Content Width"
+msgstr ""
+
+#: ../functions/customfields.php:205
+msgid "Portfolio Options"
+msgstr ""
+
+#: ../functions/customfields.php:211
+msgid "Portfolio Subheadline"
+msgstr ""
+
+#: ../functions/customfields.php:494 ../functions/customfields.php:499
+#: ../functions/customfields.php:504 ../functions/customfields.php:524
+#: ../functions/customfields.php:529 ../functions/customfields.php:534
+msgid "Optional"
+msgstr ""
+
+#: ../functions/css/custom-styles.php:15
+msgid "Theme Highlight Color"
+msgstr ""
+
+#: ../functions/help/contextual-help.php:17
+msgid "Page Intro Options"
+msgstr ""
+
+#: ../functions/templates/onecol.php:9 ../functions/templates/onecol.php:38
+#: ../functions/templates/threecol.php:23
+#: ../functions/templates/threecol.php:43 ../functions/templates/twocol.php:23
+#: ../functions/templates/twocol.php:43
+#: ../functions/widgets/widget-news.php:69
+#: ../functions/widgets/widget-news.php:74
+#, php-format
+msgid "Permanent Link to %s"
+msgstr ""
+
+#: ../functions/templates/onecol.php:27
+msgid "No Comments"
+msgstr ""
+
+#: ../functions/templates/onecol.php:27
+msgid "1 Comment"
+msgstr ""
+
+#: ../functions/templates/onecol.php:27
+msgid "% Comments"
+msgstr ""
+
+#: ../functions/templates/onecol.php:57 ../functions/templates/threecol.php:72
+#: ../functions/templates/twocol.php:72
+msgid "Nothing Found."
+msgstr ""
+
+#: ../functions/templates/onecol.php:57 ../functions/templates/threecol.php:72
+#: ../functions/templates/twocol.php:72
+msgid "Try Another Search:"
+msgstr ""
+
+#: ../functions/templates/postcontrols.php:47
+msgid "Back to"
+msgstr ""
+
+#: ../functions/templates/postcontrols.php:51
+msgid "Next Post"
+msgstr ""
+
+#: ../functions/templates/postcontrols.php:54
+msgid "Previous Post"
+msgstr ""
+
+#: ../functions/templates/regular-title.php:17
+msgid "Posts By"
+msgstr ""
+
+#: ../functions/templates/regular-title.php:20
+msgid "Search Results For:"
+msgstr ""
+
+#: ../functions/templates/standard.php:97
+#: ../functions/templates/standard.php:139
+msgid "Posted By"
+msgstr ""
+
+#: ../functions/templates/standard.php:104
+#: ../functions/templates/standard.php:152
+msgid "Categories"
+msgstr ""
+
+#: ../functions/templates/standard.php:110
+#: ../functions/templates/standard.php:163
+msgid "Tags"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:37
+msgid "A widget that displays your latest tweets."
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:43
+msgid "Custom Quick Contact Widget"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:81
+msgid "Email Address"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:82
+msgid "Your Message"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:163
+msgid "Contact Title (Optional):"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:169
+msgid "Contact Page URL:"
+msgstr ""
+
+#: ../functions/widgets/widget-contact.php:175
+msgid "Button Text:"
+msgstr ""
+
+#: ../functions/widgets/widget-news.php:29
+msgid "A widget that displays the latest post(s) from a category."
+msgstr ""
+
+#: ../functions/widgets/widget-news.php:35
+msgid "Custom News Widget"
+msgstr ""
+
+#: ../functions/widgets/widget-news.php:127
+msgid "News Title (Optional):"
+msgstr ""
+
+#: ../functions/widgets/widget-news.php:133
+#: ../functions/widgets/widget-recent-projects.php:121
+msgid "Number of Posts:"
+msgstr ""
+
+#: ../functions/widgets/widget-news.php:140
+msgid "Choose a Category:"
+msgstr ""
+
+#: ../functions/widgets/widget-recent-projects.php:29
+msgid ""
+"A widget that displays small project thumbnails from recent portfolio items."
+msgstr ""
+
+#: ../functions/widgets/widget-recent-projects.php:35
+msgid "Custom Recent Portfolio Items Widget"
+msgstr ""
+
+#: ../functions/widgets/widget-recent-projects.php:115
+msgid "Projects Title (Optional):"
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:29
+msgid "A widget that displays popular posts, facebook like box."
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:35
+msgid "Custom Posts Tab Widget"
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:69
+msgid "Popular"
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:70
+msgid "Recent"
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:175
+msgid "Tabs Title (Optional):"
+msgstr ""
+
+#: ../functions/widgets/widget-tab.php:182
+msgid "Number of Posts"
+msgstr ""
