@@ -19,6 +19,7 @@ if (is_single()) :
 
   <!-- Post Classes -->
   <div <?php post_class($postclass); ?>>
+    
 
     <!-- Post Title -->
     <div class="pagetitle">
@@ -48,26 +49,74 @@ if (is_single()) :
       <!-- Post Container -->
       <div class="container">
          <div class="<?php echo $columns; ?> columns">
-               <div class="intro-content"><?php the_field('intro_content'); ?></div>
                <div class="portfolio-media"><?php the_field('images_or_video'); ?></div>
               <!-- Content -->
               <div class="singlecontent">
-                  <!--<?php the_content(); ?>-->
-                  <div class="tw-column tw-one-third tw-column-first">
-                    <p><strong>Client</strong><br/><?php the_field('client'); ?><br/>
-                    <strong>Date</strong><br/><?php the_field('date'); ?><br/>
-                    <a target="_blank" href="<?php the_field('project_link'); ?>">View the Project</a></p>
+                  <!--<?php the_content(); ?>-->                  
+                  <div class="tw-column tw-two-third tw-column-first ">
+                    <small>Abstract</small>
+                    <?php the_field('summary'); ?>
+                  </div>
+                  <div class="tw-column tw-one-sixth tw-column-last share">
+                    
+                    <small>Tags</small>                    
                     <?php $terms = get_the_terms( $post->ID , 'filter' ); 
                                         foreach ( $terms as $term ) {
                                             $term_link = get_term_link( $term, 'filter' );
                                             if( is_wp_error( $term_link ) )
                                             continue;
-                                        echo '<a href="/' . $term->name . '">' . $term->name . '</a>';
+                                        echo '<p>' . $term->name . '</p>';
                                         } 
                                     ?>
                   </div>
-                  <div class="tw-column tw-two-third tw-column-last ">
-                    <?php the_field('summary'); ?>
+                  <div class="tw-column tw-one-sixth tw-column-last share">
+                    <small>Share</small>
+                    <div id='fb-root'></div>
+                    <script src='http://connect.facebook.net/en_US/all.js'></script>
+                   
+                    <p><a onclick='postToFeed(); return false;'>Facebook</a></br>
+                       <a class="twitter popup" href="http://twitter.com/share?text=Check%20out%20this%20case%20study%20by%20@neverwithout%20<?php the_permalink(); ?>">Tweet</a>
+                    </p>
+                    
+                    <p id='msg'></p>
+                    <script>
+                      FB.init({appId: "1410820855844255", status: true, cookie: true});
+
+                      function postToFeed() {
+
+                        var obj = {
+                          method: 'feed',
+                          redirect_uri: '<?php the_permalink(); ?>',
+                          link: 'https://developers.facebook.com/docs/reference/dialogs/',
+                          picture: '<?php the_field('facebook_thumbnail'); ?>',
+                          name: '<?php the_title(); ?>',
+                          caption: 'A Case Study from Never Without',
+                          description: '<?php the_field('excerpt'); ?>'
+                        };
+
+                        function callback(response) {
+                          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+                        }
+
+                        FB.ui(obj, callback);
+                      }
+                      jQuery('.popup').click(function(event) {
+                        var width  = 575,
+                            height = 400,
+                            left   = (jQuery(window).width()  - width)  / 2,
+                            top    = (jQuery(window).height() - height) / 2,
+                            url    = this.href,
+                            opts   = 'status=1' +
+                                     ',width='  + width  +
+                                     ',height=' + height +
+                                     ',top='    + top    +
+                                     ',left='   + left;
+
+                        window.open(url, 'twitter', opts);
+
+                        return false;
+                      });
+                    </script>
                   </div>
               </div> <div class="clear"></div>
               <!-- End Content --> 

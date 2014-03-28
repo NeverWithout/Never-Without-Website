@@ -64,15 +64,26 @@ echo ag_load_fonts(); ?>
 <!-- Mobile Specific Metas
   ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<?php if ( is_singular( 'portfolio' ) ) { ?>
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+    <meta property="og:title" content="<?php the_title(); ?>"/>
+    <meta property="og:image" content="<?php the_field('facebook_thumbnail'); ?>"/>
+    <meta property="og:url" content="<?php the_permalink(); ?>"/>
+    <meta property="og:description" content="<?php the_field('excerpt'); ?>"/>
+    <meta property="og:type" content="case study"/>
+    <meta property="fb:app_id" content="1410820855844255"/>
+<?php } ?>
+
+
 
 <?php 
 /* WordPress Header Data
 ================================================== */ 
 wp_head(); ?>
 
+
+
 <script>jQuery(document).ready(function(){ jQuery('.top-nav').themewichStickyNav(); });</script>
-
-
 
 </head>
 

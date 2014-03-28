@@ -108,7 +108,7 @@ $term_list = implode(',', $term_list);
   <?php if (get_next_posts_link()) : ?>
   <div class="container">
     <div class="sixteen columns">
-        <p class="more-posts"><?php next_posts_link(__('Load More Posts', 'framework')); ?></p>
+        <p class="more-posts"><?php next_posts_link(__('Load More Work', 'framework')); ?></p>
         <div class="clear"></div>
     </div>
   </div>

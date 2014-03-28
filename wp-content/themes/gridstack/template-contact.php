@@ -94,7 +94,8 @@ $add_validate = true;
 ================================================== */
 get_header(); ?>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false&v=3.exp"></script>
-<script src="http://kanadesign.com/styledgmaps/js/jquery.gmap.min.js"></script>
+<?php $templatedirectory = get_template_directory_uri(); ?>
+<script src="<?php echo $templatedirectory;?>/js/jquery.gmap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 	$("#responsive_map").gMap({
@@ -146,7 +147,7 @@ img[src*="iws3.png"] { display: none;}
 get_template_part('functions/templates/page-title-rotator'); ?>
 <div id="postcontainer">
     <div class="container">
-        <div class="ten columns singlecontent">
+        <div class="seven columns singlecontent">
         	<?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
 				<?php if(isset($email_sent) && $email_sent == true){ // If email was submitted ?>
                     <div class="emailsuccess">
@@ -166,54 +167,51 @@ get_template_part('functions/templates/page-title-rotator'); ?>
             <!-- Contact Form -->
             <div class="contactcontent">
                 <div id="contact-form">
+                  <h3>Leave us a message:</h3>
                     <form action="<?php the_permalink(); ?>" id="contactform" method="post" class="contactsubmit">
                         <div class="formrow">
-                            <div class="one-half">
-                                <label for="c_name">
-                                    <?php _e('Name', 'framework'); ?>
-                                </label>
-                                <input type="text" name="c_name" id="c_name" size="22" tabindex="1" class="required" />
+                            <div class="one-full">
+                                <input placeholder='Your Name' type="text" name="c_name" id="c_name" size="22" tabindex="1" class="required" />
                                 <?php if($name_error != '') { ?>
                                 <p><?php echo $name_error;?></p>
                                 <?php } ?>
                             </div>
-                            <div class="one-half column-last">
-                                <label for="c_email">
-                                    <?php _e('Email', 'framework');?>
-                                </label>
-                                <input type="text" name="c_email" id="c_email" size="22" tabindex="1" class="required email" />
-                                <?php if($email_error != '') { ?>
-                                <p><?php echo $email_error;?></p>
-                                <?php } ?>
-                            </div>
+                        </div>
+                        <div class="formrow">
+                          <div class="one-full column-last">
+                              <input placeholder='Your Email' type="text" name="c_email" id="c_email" size="22" tabindex="1" class="required email" />
+                              <?php if($email_error != '') { ?>
+                              <p><?php echo $email_error;?></p>
+                              <?php } ?>
+                          </div>
                         </div>
                         <div class="messagerow">
-                            <label for="c_message">
-                                <?php _e('Message', 'framework'); ?>
-                            </label>
-                            <textarea name="c_message" id="c_message" cols="100%" rows="8" tabindex="3" class="required"></textarea>
+                          <div class="one-full">
+                            <textarea placeholder='Message' name="c_message" id="c_message" cols="100%" rows="8" tabindex="3" class="required"></textarea>
                             <?php if($message_error != '') { ?>
                             <p><?php echo $message_error;?></p>
                             <?php } ?>
+                          </div>
                         </div>
 						
-						<?php if ($captcha == 'on') : ?>
-						<div class="one-half">
-							<div class="messagerow">
-								<label for="c_captcha">
-										<?php _e('What is 5 - 1?', 'framework');?>
-								</label>
-								<input type="text" name="c_captcha" id="c_captcha" size="22" tabindex="4" class="required captcha" />
-								<?php if($captcha_error != '') { ?>
-									<p class="error"><?php echo $captcha_error;?></p>
-								<?php } ?>
-							</div>
-						</div><div class="clear"></div>
-						<?php endif; ?>
+            						<?php if ($captcha == 'on') : ?>
+                        <div class="formrow">
+              						<div class="one-full">
+              								<label for="c_captcha">
+										
+              								</label>
+              								<input placeholder="<?php _e('What is 5 - 1?', 'framework');?>" type="text" name="c_captcha" id="c_captcha" size="22" tabindex="4" class="required captcha" />
+              								<?php if($captcha_error != '') { ?>
+              									<p class="error"><?php echo $captcha_error;?></p>
+              								<?php } ?>
+              						</div>
+                          <div class="clear"></div>
+                        </div>
+            						<?php endif; ?>
 						
                         <p>
                             <label for="c_submit"></label>
-                            <input type="submit" name="c_submit" id="c_submit" class="button" value="<?php _e('Send Message', 'framework'); ?>"/>
+                            <input type="submit" name="c_submit" id="c_submit" class="button" value="<?php _e('Submit', 'framework'); ?>"/>
                         </p>
                         <input type="hidden" name="c_submitted" id="c_submitted" value="true" />
                     </form>
@@ -226,9 +224,16 @@ get_template_part('functions/templates/page-title-rotator'); ?>
         </div> 
 
         <!-- Sidebar -->
-        <div class="five columns offset-by-one">
-          <?php  /* Widget Area */ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Contact Sidebar') ) ?>
+        <div class="three columns offset-by-one sidebar">
+          <?php if( get_field( "sidebar_1" ) ): ?>
+            <?php the_field( "sidebar_1" ); ?>
+          <?php endif;?>
         </div> 
+        <div class="four columns offset-by-one column-last sidebar">
+          <?php if( get_field( "sidebar_2" ) ): ?>
+            <?php the_field( "sidebar_2" ); ?>
+          <?php endif;?>
+        </div>
         <!-- End Sidebar -->
 
     </div><div class="clear"></div>

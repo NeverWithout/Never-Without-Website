@@ -81,7 +81,7 @@ $autoplay   = (of_get_option('of_home_autoplay') == 'true') ? 'autoplay' : 'noau
   <?php if (get_next_posts_link()) : ?>
   <div class="container infinite-pagination">
     <div class="sixteen columns">
-      <p class="more-posts"><?php next_posts_link(__('Load More Posts', 'framework')); ?></p>
+      <p class="more-posts"><?php next_posts_link(__('Load More Work', 'framework')); ?></p>
       <div class="clear"></div>
     </div>
   </div>

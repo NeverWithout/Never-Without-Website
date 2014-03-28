@@ -43,7 +43,7 @@ $tw_options = themewich_page_title_options($pageID);
       <div class="container">
 
       <!-- Title  -->
-        <div class="thirteen columns info titlerotator pager <?php echo $tw_options['autoplay']; ?> <?php echo $tw_options['adapt']; ?>" data-pause="<?php echo $tw_options['pause']?>000" data-speed="1500">
+        <div class="eleven columns info titlerotator pager <?php echo $tw_options['autoplay']; ?> <?php echo $tw_options['adapt']; ?>" data-pause="<?php echo $tw_options['pause']?>000" data-speed="1500">
 
         <?php echo ($tw_options['plural']) ? '<ul class="bxslider">' : ''; ?> 
 

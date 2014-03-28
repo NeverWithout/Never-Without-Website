@@ -51,8 +51,9 @@ $term_list = implode(',', array_unique($term_list));
   <!-- Homepage Filter -->
   <div class="container filtercontainer">
       <div class="sixteen columns">
+          <small>Filter By:</small>
           <ul class="filter" id="filters">
-               <li><a href="" data-filter="*" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
+               <li><a href="*" data-filter="*" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
                <?php if (!empty($term_list)) { 
                    wp_list_categories(array(
                      'title_li' => '', 
@@ -62,6 +63,7 @@ $term_list = implode(',', array_unique($term_list));
                      'walker' => new Themewich_Walker_Portfolio_Filter()
                      ));
                 } ?>
+                <div style="clear:both; float: none;"></div>
           </ul> 
       </div>      
       <div class="clear"></div>
@@ -110,7 +112,7 @@ $term_list = implode(',', array_unique($term_list));
   <?php if (get_next_posts_link()) : ?>
   <div class="container">
     <div class="sixteen columns">
-        <p class="more-posts"><?php next_posts_link(__('Load More Posts', 'framework')); ?></p>
+        <p class="more-posts"><?php next_posts_link(__('Load More Work', 'framework')); ?></p>
         <div class="clear"></div>
     </div>
   </div>
@@ -131,9 +133,9 @@ $term_list = implode(',', array_unique($term_list));
 <!-- End containerwrap -->
 <script type="text/javascript">
 function pageload(hash) {
-	var hash = location.hash;
+  var hash = location.hash.split("#");
 
-	var selector = jQuery('ul.filter a[href="'+hash+'"]');
+	var selector = jQuery('ul.filter a[href="'+hash[1]+'"]');
 
 	var filterthis = selector.attr('data-filter');
 
@@ -149,7 +151,7 @@ function pageload(hash) {
 
 jQuery("ul.filter a").click(function(){
 	// 
-	var hash = this.href;
+	var hash = this.getAttribute('href');
 	hash = hash.replace(/^.*#/, '');
 	// moves to a new page. 
 	// pageload is called at once. 

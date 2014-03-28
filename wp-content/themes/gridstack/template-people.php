@@ -16,20 +16,35 @@ get_template_part('functions/templates/page-title-rotator'); ?>
     <div class="container">
         <div class="sixteen columns">
         	<div class="singlecontent">
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  
-                the_content(); 
-            endwhile; endif; ?>
-            <div class="staff-directory">
-              <?php if(function_exists('staff_directory')){echo staff_directory();} ?>
-            </div> 
-            </div>
+            <ul id="og-grid" class="og-grid">
+              <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                  <?php if( have_rows('team_member') ): ?>
+                      <?php while ( have_rows('team_member') ) : the_row(); ?>
+                        <li>
+                          <a href="<?php the_permalink() ?>" data-largesrc="<?php the_sub_field('image'); ?>" data-title="<?php the_sub_field('name'); ?>" data-description="<?php the_sub_field('description'); ?>">
+                            <img src="<?php the_sub_field('image'); ?>" alt="img01" />
+                          </a>
+                        </li>
+                    <?php endwhile; else : ?>
+                  <?php endif; ?>
+              <?php endwhile; endif; ?>
+            </ul>
+          </div>
         </div> 
         <div class="clear"></div>
     </div>
     <div class="clear"></div>
 </div>
 <!-- END Container Wrap -->
-
+  <script>
+    jQuery(function() {
+    	if (jQuery("#og-grid").length){
+        console.log('thereitis');
+    		//Grid.init();
+    	}
+    });
+  </script>
+		
 <?php 
 /* Get Footer
 ================================================== */

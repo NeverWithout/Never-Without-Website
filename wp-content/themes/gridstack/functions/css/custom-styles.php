@@ -121,7 +121,7 @@ if ($sffont = of_get_option('of_nav_font')) {
 	}
 
 } ?>
-font-size:12px;
+font-size:14px;
 }
 
 /* Slider Caption, Page Title, and Section Title Font */
