@@ -4,6 +4,8 @@ Template Name: Philosophy Page
 */
 get_header(); 
 
+what_js();
+
 global $tw_column_width; ?>
 
 <?php 
@@ -25,6 +27,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
                   <?php if( have_rows('philosophy') ): ?>
                       <?php while ( have_rows('philosophy') ) : the_row(); ?>
                         <li>
+													<span><?php the_sub_field('category'); ?></span>
                           <h2><?php the_sub_field('title'); ?></h2>
                           <?php the_sub_field('description'); ?>
                         </li>
@@ -45,7 +48,16 @@ get_template_part('functions/templates/page-title-rotator'); ?>
     <div class="clear"></div>
 </div>
 <!-- END Container Wrap -->
-
+  <script>
+    jQuery(function() {
+    	if (jQuery(".rslides").length){
+    		jQuery(".rslides").responsiveSlides({
+    			auto: false,
+					nav: true
+    		});
+    	}
+    });
+  </script>
 <?php 
 /* Get Footer
 ================================================== */

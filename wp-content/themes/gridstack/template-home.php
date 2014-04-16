@@ -33,7 +33,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
   <div class="container filtercontainer">
     <div class="sixteen columns">
       <ul class="filter" id="filters">
-        <li><a href="#" data-filter="*" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
+        <li><a href="#" data-filter="&#42;" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
         <?php wp_list_categories(array(
           'title_li'  => '', 
           'taxonomy'  => 'filter', 

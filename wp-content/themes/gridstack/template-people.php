@@ -4,6 +4,8 @@ Template Name: People Page
 */
 get_header(); 
 
+what_js();
+
 global $tw_column_width; ?>
 
 <?php 
@@ -21,8 +23,9 @@ get_template_part('functions/templates/page-title-rotator'); ?>
                   <?php if( have_rows('team_member') ): ?>
                       <?php while ( have_rows('team_member') ) : the_row(); ?>
                         <li>
-                          <a href="<?php the_permalink() ?>" data-largesrc="<?php the_sub_field('image'); ?>" data-title="<?php the_sub_field('name'); ?>" data-description="<?php the_sub_field('description'); ?>">
+                          <a class="content" href="<?php the_permalink() ?>" data-largesrc="<?php the_sub_field('image'); ?>" data-title="<?php the_sub_field('name'); ?>" data-description="<?php the_sub_field('description'); ?>" data-linkedin="<?php the_sub_field('linkedin_url'); ?>" data-twitter="<?php the_sub_field('twitter_url'); ?>">
                             <img src="<?php the_sub_field('image'); ?>" alt="img01" />
+                            <h4><?php the_sub_field('name'); ?></h4>
                           </a>
                         </li>
                     <?php endwhile; else : ?>
@@ -39,8 +42,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
   <script>
     jQuery(function() {
     	if (jQuery("#og-grid").length){
-        console.log('thereitis');
-    		//Grid.init();
+    		Grid.init();              
     	}
     });
   </script>

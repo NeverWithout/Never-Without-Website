@@ -280,10 +280,10 @@ jQuery.noConflict();
 		 jQuery('a img').not('.single-slideshow a img, .featured-image img, .ag_recentprojects_widget a img, .gallery a img, a img.fullimg, a img.fixedimg, .wp-caption a img').each(function() {
 			jQuery(this).hover( function() {
 				var $this = jQuery(this).parent().children('img');
-				jQuery($this).stop().animate({opacity : 0.5}, 250, 'easeOutCubic');
+				//jQuery($this).stop().animate({opacity : 0.5}, 250, 'easeOutCubic');
 			}, function() {
 				var $this = jQuery(this).parent().children('img');
-				jQuery($this).stop().animate({opacity : 1}, 250, 'easeOutCubic');
+				//jQuery($this).stop().animate({opacity : 1}, 250, 'easeOutCubic');
 			});
 			
 		  });
@@ -731,26 +731,185 @@ jQuery.noConflict();
 					 * Filters items when clicked
 					 * @return {void} 
 					 */
+          /*
 					function filterSelector($isocontainer) {
-						$('#filters a, a.filtersort').click(function(e){
-							e.preventDefault();
-							$('#filters a').removeClass("active");
-	
+						$('.filter li, a.filtersort').click(function(e){
+              
 							  var $selector = $(this).attr('data-filter');
-							  
-								  $('#filters a').each(function() {
-									  var $filterselect = $(this).attr('data-filter');
-									  if ($filterselect == $selector){
-										$(this).addClass("active");
-									  }
-								  });
 	
 							  $isocontainer.isotope({ filter: $selector });
+                
+              	var hash = this.getAttribute('data-filter');
+              	//hash = hash.replace(/^.*#/, '');
+                hash = hash.replace(/\./g, "");
+                
+              	// moves to a new page. 
+              	// pageload is called at once. 
+              	jQuery.history.load(hash);
+              	return false;
 		
 						});
 					}
-					
-	
+          */
+          function filterSelector($isocontainer) {
+            var filters = {};
+            
+            $('select.filter').change(function(){
+              var $selector = $(this).attr('value');
+              $isocontainer.isotope({ filter: $selector });
+              var $container = $('.home-tope');
+              var $this = $(this);
+              // get group key
+              var $buttonGroup = $this;
+              var filterGroup = $buttonGroup.attr('data-filter-group');
+              var $msgDiv = $('.message-div');
+              var $clientSelectedname = $(".filter1 option:selected").html().trim();
+              var $clientSelected = $clientSelectedname.toLowerCase().replace(/ /g, '-');
+              var $mediumSelectedname = $(".filter2 option:selected").html().trim();
+              var $mediumSelected = $mediumSelectedname.toLowerCase().replace(/ /g, '-');
+              // set filter for group
+              filters[ filterGroup ] = $this.attr('value');
+
+              // combine filters
+              var filterValue = '';
+              for ( var prop in filters ) {
+                filterValue += filters[ prop ];
+              }
+              // set filter for Isotope
+              $container.isotope({ 
+                filter: filterValue 
+              });                
+              if ( !$container.data('isotope').$filteredAtoms.length ) {
+                $msgDiv.empty();
+                $msgDiv.append("<p>There are no results in these categories. Would you like to view <a class='cAnchor' href='#' data-filter='."+$clientSelected+"'>"+$clientSelectedname+"</a> or <a class='mAnchor' href='#' data-filter='."+$mediumSelected+"'>"+$mediumSelectedname+"</a>?</p>");
+                var cAnchor2 = $(".message-div .cAnchor");
+                var mAnchor2 = $(".message-div .mAnchor");
+                
+                $(cAnchor2).click(function(){
+                  var anchor3 = $(this).html();
+                  $('.filter1 select option').each(function(){
+                    var text = $(this).html();
+                    if (text.match(anchor3)){
+                      var idx = $(this).index();
+                      $('.filter1 select').easyDropDown('select', idx);
+                      $('.filter2 select').easyDropDown('select', 0);
+                    }
+                  });    
+                   
+                  $container.isotope({ 
+                    filter: '.'+$clientSelected
+                  });
+                    
+                  $('.message-div').fadeOut('fast');
+                  return false;
+                });
+                $(mAnchor2).click(function(){
+                  var anchor4 = $(this).html();
+                  $('.filter2 select option').each(function(){
+                    var text = $(this).html();
+                    if (text.match(anchor4)){
+                      var idx = $(this).index();
+                      $('.filter2 select').easyDropDown('select', idx);
+                      $('.filter1 select').easyDropDown('select', 0);
+                    }
+                  }); 
+                  $container.isotope({ 
+                    filter: '.'+$mediumSelected
+                  }); 
+                  
+                  $('.message-div').fadeOut('fast');
+                  return false;
+                });
+                
+                $('.message-div').fadeIn('slow');
+                
+              } else {
+                $('.message-div').fadeOut('fast');
+              }
+              
+            });
+            $('.filter li').click(function(e){
+                var $container = $('.home-tope');
+                var $this = $(this);
+                // get group key
+                var $buttonGroup = $this.parents('.dropdown ul');
+                var filterGroup = $buttonGroup.attr('data-filter-group');
+                var $msgDiv = $('.message-div');
+                var $clientSelectedname = $(".filter1 span.selected").html();
+                var $clientSelected = $clientSelectedname.toLowerCase().replace(/ /g, '-');
+                //var $clientSelected = "."+$clientSelected;
+                var $mediumSelectedname = $(".filter2 span.selected").html();
+                var $mediumSelected = $mediumSelectedname.toLowerCase().replace(/ /g, '-');
+                // set filter for group
+                filters[ filterGroup ] = $this.attr('data-filter');
+                // combine filters
+                var filterValue = '';
+                for ( var prop in filters ) {
+                  filterValue += filters[ prop ];
+                }
+                // set filter for Isotope
+                $container.isotope({ 
+                  filter: filterValue 
+                });                
+                if ( !$container.data('isotope').$filteredAtoms.length ) {
+                  $msgDiv.empty();
+                  $msgDiv.append("<p>There are no results in these categories. Would you like to view <a class='cAnchor' href='#' data-filter='."+$clientSelected+"'>"+$clientSelectedname+"</a> or <a class='mAnchor' href='#' data-filter='"+$mediumSelected+"'>"+$mediumSelectedname+"</a>?</p>");
+                  var cAnchor = $(".message-div .cAnchor");
+                  var mAnchor = $(".message-div .mAnchor");
+                  
+                  $(cAnchor).click(function(){
+                    var anchor = $(this).html();
+                    $('.filter1 ul li').each(function(){
+                      var text = $(this).html();
+                      if (text.match(anchor)){
+                        var idx = $(this).index();
+                        $('.filter1 .dropdown select').easyDropDown('select', idx);
+                        $('.filter2 .dropdown select').easyDropDown('select', 0);
+                      }
+                    });    
+                     
+                    $container.isotope({ 
+                      filter: '.'+$clientSelected
+                    });  
+                    $('.message-div').fadeOut('fast');
+                    return false;
+                  });
+                  $(mAnchor).click(function(){
+                    var anchor2 = $(this).html();
+                    $('.filter2 ul li').each(function(){
+                      var text = $(this).html();
+                      if (text.match(anchor2)){
+                        var idx = $(this).index();
+                        
+                        $('.filter2 .dropdown select').easyDropDown('select', idx);
+                        $('.filter1 .dropdown select').easyDropDown('select', 0);
+                      }
+                    }); 
+                    
+                    $container.isotope({ 
+                      filter: '.'+$mediumSelected
+                    }); 
+                    $('.message-div').fadeOut('fast');
+                    return false;
+                  });
+                  
+                  $('.message-div').fadeIn('slow');
+                  
+                } else {
+                  $('.message-div').fadeOut('fast');
+                }
+                
+            });
+          }
+          /*
+          
+					function filterSelector($isocontainer) {
+            $('#filters option').change(function(){
+              var $selector = $(this).attr('value');
+              $isocontainer.isotope({ filter: $selector });
+            });
+          }
+	*/
 					/**
 					 * Runs isotope script
 					 * @return {void} 
@@ -993,22 +1152,22 @@ jQuery.noConflict();
 					* Filter link when clicked
 					* @return false
 					*/
-					$('#filters a, a.filtersort').click(function(){
-						$('#filters a').removeClass("active");
-	
+          
+					$('.filter li, a.filtersort').click(function(){
 						  var $selector = $(this).attr('data-filter');
-						  
-							  $('#filters a').each(function() {
-								  var $filterselect = $(this).attr('data-filter');
-								  if ($filterselect == $selector){
-									$(this).addClass("active");
-								  }
-							  });
 	
 						  $this.isotope({ filter: $selector });
+              console.log('clicked');
 						  return false;
 					});
-	
+	        /*
+          
+          $('#filters option').change(function(){
+            var $selector = $(this).attr('value');
+            $this.isotope({ filter: $selector });
+            
+          });
+          */
 					// Callback
 					if (callback && typeof(callback) === "function") {
 							callback();

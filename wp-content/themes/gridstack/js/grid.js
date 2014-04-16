@@ -231,17 +231,32 @@
   	}
 
   	function initEvents() {
-
+      $('.og-grid li a h4').css('display', 'none');
   		// close preview on grid filter link clicked
   		jQuery('#grid-filter li a').click( function() { 
-  			hidePreview(); 
-  		} )
-		
+  			hidePreview();        
+  		});
+      
+      var liHeight = $('.og-grid li').height();
+      
+      $('.og-grid li h4').each(function(){
+        $(this).css('line-height', liHeight + 'px');        
+      });
+
+      $('.og-grid li').hover(
+        function(){
+          $(this).next('h4').css('display','block');
+        }, function(){
+          $(this).next('h4').css('display','none');
+        }
+      );
+      
   		// when clicking an item, show the preview with the item´s info and large image.
   		// close the item if already expanded.
   		// also close if clicking on the itemÂ´s cross
   		$items.on( 'click', 'span.og-close', function() {
   			hidePreview();
+        jQuery('ul.og-grid li a').css('opacity', '1');
   			return false;
   		} ).children( 'a' ).on( 'click', function(e) {
 
@@ -251,7 +266,8 @@
   				var $item = $( this ).parent();
   				// check if item already opened
   				current === $item.index() ? hidePreview() : showPreview( $item );
-
+          jQuery('ul.og-grid li a.content').css('opacity', '.5');
+          jQuery(this).css('opacity','1');
   			}
 
   			return false;
@@ -335,12 +351,15 @@
   		create : function() {
   			// create Preview structure:
   			this.$title = $( '<h3></h3>' );
-  			this.$description = $( '<p></p>' );
-  			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description );
+  			this.$description = $( '<p></p>' );   
+        this.$linkedin = $('<a href><img src="../wp-content/themes/gridstack/images/social-linkedin.gif"/><span>LinkedIn Profile</span></a>');     
+        this.$social = $('<div class="social"></div>').append(this.$linkedin, this.$twitter);
+        this.$info = $('<div class="about"></div>').append(this.$title, this.$description)
+  			this.$details = $( '<div class="og-details"></div>' ).append( this.$info, this.$social );
   			this.$loading = $( '<div class="og-loading"></div>' );
   			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
   			this.$closePreview = $( '<span class="og-close"></span>' );
-  			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+  			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$details );
   			this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
   			// append preview element to the item
   			this.$item.append( this.getEl() );
@@ -367,18 +386,20 @@
   			// update current value
   			current = this.$item.index();
 
-  			// update previewÂ´s content
+  			// update preview's content
   			var $itemEl = this.$item.children( 'a' ),
   				eldata = {
-  					href : $itemEl.attr( 'href' ),
+  					//href : $itemEl.attr( 'href' ),
   					largesrc : $itemEl.data( 'largesrc' ),
   					title : $itemEl.data( 'title' ),
-  					description : $itemEl.data( 'description' )
+  					description : $itemEl.data( 'description' ),
+            linkedin : $itemEl.data('linkedin'),
   				};
 
   			this.$title.html( eldata.title );
   			this.$description.html( eldata.description );
-  			this.$href.attr( 'href', eldata.href );
+        this.$linkedin.attr( 'href', eldata.linkedin);
+  			//this.$href.attr( 'href', eldata.href );
 
   			var self = this;
 			

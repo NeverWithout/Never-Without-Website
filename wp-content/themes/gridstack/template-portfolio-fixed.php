@@ -56,7 +56,7 @@ $term_list = implode(',', array_unique($term_list));
   <div class="container filtercontainer">
       <div class="sixteen columns">
           <ul class="filter" id="filters">
-               <li><a href="#" data-filter="*" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
+               <li><a href="#" data-filter="&#42;" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
                <?php if (!empty($term_list)) { 
                   wp_list_categories(array(
                     'title_li'    => '', 
@@ -148,7 +148,12 @@ function pageload(hash) {
 		jQuery(this).removeClass('active');
 	});
 	jQuery(selector).addClass('active');
-	jQuery('.home-tope').isotope({ filter: filterthis });
+	jQuery('.home-tope').isotope({ 
+		filter: filterthis,
+		masonry: {
+			cornerStampSelector: 'div.filter'
+		}
+	});
   if(hash == "") {
     jQuery('.filter li:first-child a').addClass('active');
   }

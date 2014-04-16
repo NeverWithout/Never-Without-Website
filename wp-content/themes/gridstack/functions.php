@@ -945,48 +945,67 @@ if (!function_exists('themewich_register_js')) :
     		// Get theme version info
     		global $themewich_theme_info;
 
-            $ajax = (of_get_option('of_ajaxify')) ? of_get_option('of_ajaxify') : 'on';
+        $ajax = (of_get_option('of_ajaxify')) ? of_get_option('of_ajaxify') : 'on';
     		
     		// Register theme javascript
-			if (!wp_script_is('jquery')) wp_enqueue_script('jquery'); // Load jquery if not already loaded
-            wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.min.js', 'jquery', '2.6.2', false);
-            wp_register_script('history', get_template_directory_uri() . '/js/jquery.history.js', 'jquery', '1.8b2', false);
-            wp_register_script('ajaxify', get_template_directory_uri() . '/js/jquery.ajaxify.js', 'jquery', '1.0.1', false);            
-			wp_register_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', 'jquery', '1.0', true);
-			wp_register_script('ba-bbq', get_template_directory_uri() . '/js/bs-history.js', 'jquery', '1.2.1 ', true);
-			wp_register_script('isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', 'jquery', '1.5.25', true);
-			wp_register_script('bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', 'jquery', '4.1.1', true);
-			wp_register_script('infinite', get_template_directory_uri() . '/js/jquery.infinitescroll.min.js', 'jquery', '1.5.100504', true);
-			wp_register_script('magnificpopup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', 'jquery', '0.9.4', true);
-			wp_register_script('validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', '1.11.1', true);
-			wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.min.js', 'jquery', '1.7.4', true);
-			wp_register_script('easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', 'jquery', '1.3', true);
-			wp_register_script('themewich-tabs', get_template_directory_uri() . '/js/jquery.themewichtabs.min.js', 'jquery', '1.0', true);
-			wp_register_script('custom', get_template_directory_uri() . '/js/custom.js', 'jquery', $themewich_theme_info->Version, true); 
+				if (!wp_script_is('jquery')) wp_enqueue_script('jquery'); // Load jquery if not already loaded
+        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.custom.min.js', 'jquery', '2.6.2', false);
+        wp_register_script('history', get_template_directory_uri() . '/js/jquery.history.js', 'jquery', '1.8b2', false);
+        wp_register_script('ajaxify', get_template_directory_uri() . '/js/jquery.ajaxify.js', 'jquery', '1.0.1', false);            
+				wp_register_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', 'jquery', '1.0', true);
+				wp_register_script('ba-bbq', get_template_directory_uri() . '/js/bs-history.js', 'jquery', '1.2.1 ', true);
+				wp_register_script('isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', 'jquery', '1.5.25', true);
+				wp_register_script('bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', 'jquery', '4.1.1', true);
+				wp_register_script('infinite', get_template_directory_uri() . '/js/jquery.infinitescroll.min.js', 'jquery', '1.5.100504', true);
+				wp_register_script('magnificpopup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', 'jquery', '0.9.4', true);
+				wp_register_script('validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', '1.11.1', true);
+				wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.min.js', 'jquery', '1.7.4', true);
+				wp_register_script('easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', 'jquery', '1.3', true);
+				wp_register_script('themewich-tabs', get_template_directory_uri() . '/js/jquery.themewichtabs.min.js', 'jquery', '1.0', true);	      								
+				wp_register_script('custom', get_template_directory_uri() . '/js/custom.js', 'jquery', $themewich_theme_info->Version, true); 
 
-            // Localize the ajax script
-            $variables_array = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'get_template_directory_uri' => get_template_directory_uri() );
-            wp_localize_script('custom', 'agAjax', $variables_array);
+        // Localize the ajax script
+        $variables_array = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'get_template_directory_uri' => get_template_directory_uri() );
+        wp_localize_script('custom', 'agAjax', $variables_array);
           
     		// Enqueue javascript used on every page
     		wp_enqueue_script('jquery');
-            wp_enqueue_script('modernizr');
-			wp_enqueue_script('superfish');
-			wp_enqueue_script('fitvids');
-			wp_enqueue_script('easing');
+        wp_enqueue_script('modernizr');
+				wp_enqueue_script('superfish');
+				wp_enqueue_script('fitvids');
+				wp_enqueue_script('easing');
 
-            if ($ajax && $ajax == 'on' ) { 
-                wp_enqueue_script('history');
-                wp_enqueue_script('ajaxify');
-            }
+        if ($ajax && $ajax == 'on' ) { 
+            wp_enqueue_script('history');
+            wp_enqueue_script('ajaxify');
+        }
+				
+				
 			
-			wp_enqueue_script('custom');
+				wp_enqueue_script('custom');
     		
     	}
-    }
-    add_action('init', 'themewich_register_js');
+	  }
+	  add_action('init', 'themewich_register_js');
 endif;
 
+/** What grid?
+**/
+function what_js(){
+	if(is_page('people')){
+		wp_register_script('grid', get_template_directory_uri() . '/js/grid.js', 'jquery', '1.0', true);
+		wp_enqueue_script('grid');
+	}else if(is_page('disciplines')){
+		wp_register_script('grid-disc', get_template_directory_uri() . '/js/grid-disc.js', 'jquery', '1.0', true);
+		wp_enqueue_script('grid-disc');
+	}else if(is_page('philosophy')){
+		wp_register_script('rslides', get_template_directory_uri() . '/js/rslides.min.js', 'jquery', true);
+		wp_enqueue_script('rslides');
+	}else if(is_page('work')){
+		wp_register_script('dropdown', get_template_directory_uri() . '/js/dropdown.js', 'jquery', true);
+		wp_enqueue_script('dropdown');
+	}
+}
 
 /**
  * Loads slider javascript
@@ -1162,9 +1181,23 @@ if ( function_exists('register_sidebar') ) {
   'after_title' => '</h4>',
  ));
  register_sidebar(array( 
-  'name' => 'Footer',
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => '</div><div class="clear"></div>',
+  'name' => 'Footer Column 1',
+  'before_widget' => '<div id="%1$s" class="widget %2$s tw-column one-fourth">',
+  'after_widget' => '</div>',
+  'before_title' => '<h3 class="widget-title">',
+  'after_title' => '</h3>',
+ ));
+ register_sidebar(array( 
+  'name' => 'Footer Column 2',
+  'before_widget' => '<div id="%1$s" class="widget %2$s tw-column one-third">',
+  'after_widget' => '</div>',
+  'before_title' => '<h3 class="widget-title">',
+  'after_title' => '</h3>',
+ ));
+ register_sidebar(array( 
+  'name' => 'Footer Column 3',
+  'before_widget' => '<div id="%1$s" class="widget %2$s tw-column two-fourth">',
+  'after_widget' => '</div>',
   'before_title' => '<h3 class="widget-title">',
   'after_title' => '</h3>',
  ));
@@ -1491,7 +1524,7 @@ if (!class_exists('Themewich_Walker_Portfolio_Filter')) :
           $cat_name = esc_attr( $category->name);
           $cat_slug = $category->slug;
           $cat_name = apply_filters( 'list_cats', $cat_name, $category );
-          $link = '<a href='.$cat_name.' class="no-ajaxy" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'" ';
+          $link = '<a href='.$cat_slug.' class="no-ajaxy" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'" ';
           if ( $use_desc_for_title == 0 || empty($category->description) )
              $link .= 'title="' . sprintf(__( 'View all projects filed under %s', 'framework'), $cat_name) . '"';
           else
@@ -1529,7 +1562,7 @@ if (!class_exists('Themewich_Walker_Portfolio_Filter')) :
           if ( isset($current_category) && $current_category )
              $_current_category = get_category( $current_category );
           if ( 'list' == $args['style'] ) {
-              $output .= '<li class="segment-2"';
+              $output .= '<option class="segment-2" value=".'.$cat_slug.'" data-filter=".'.$cat_slug.'"';
               $class = 'cat-item cat-item-'.$category->term_id;
               if ( isset($current_category) && $current_category && ($category->term_id == $current_category) )
                  $class .=  ' current-cat';

@@ -2,6 +2,9 @@
 /* 
 Template Name: Portfolio Page
 */
+
+what_js();
+
 get_header(); 
 
 global $tw_column_width;
@@ -49,25 +52,71 @@ $term_list = implode(',', array_unique($term_list));
 <div id="postcontainer">
 
   <!-- Homepage Filter -->
-  <div class="container filtercontainer">
-      <div class="sixteen columns">
-          <small>Filter By:</small>
-          <ul class="filter" id="filters">
-               <li><a href="*" data-filter="*" class="active no-ajaxy"><?php _e('All', 'framework');?></a></li>
-               <?php if (!empty($term_list)) { 
-                   wp_list_categories(array(
-                     'title_li' => '', 
-                     'include' => $term_list, 
-                     'taxonomy' => 'filter', 
-                     'show_option_none'   => '', 
-                     'walker' => new Themewich_Walker_Portfolio_Filter()
-                     ));
-                } ?>
-                <div style="clear:both; float: none;"></div>
-          </ul> 
-      </div>      
-      <div class="clear"></div>
-  </div>
+	<div class="grey">
+	  <div class="container">
+	    <div class="sixteen columns">
+			  <div class="filter filter1">			    
+		      <small>Filter By Client:</small>
+		      <select class="filter dropdown" id="filters filter1" data-filter-group="client">
+	           <option value="" data-filter="" selected><?php _e('All', 'framework');?></option>
+	           <?php if (!empty($term_list)) { 
+	               wp_list_categories(array(
+	                 'title_li' => '', 
+	                 'include' => $term_list, 
+	                 'taxonomy' => 'filter', 
+									 'child_of' => '21',
+	                 'show_option_none'   => '', 
+	                 'walker' => new Themewich_Walker_Portfolio_Filter()
+	                 ));
+	            } ?>
+		      </select> 	     
+			  </div>      
+			  <div class="filter filter2">			    
+		      <small>Filter By Medium:</small>
+		      <select class="filter dropdown" id="filters filter2" data-filter-group="medium">
+	           <option value="" data-filter="" selected><?php _e('All', 'framework');?></option>
+	           <?php if (!empty($term_list)) { 
+	               wp_list_categories(array(
+	                 'title_li' => '', 
+	                 'include' => $term_list, 
+	                 'taxonomy' => 'filter', 
+									 'child_of' => '12',
+	                 'show_option_none'   => '', 
+	                 'walker' => new Themewich_Walker_Portfolio_Filter()
+	                 ));
+	            } ?>
+		      </select> 	     
+			  </div>
+				<!--
+				<div class="filter">
+		      <small>Filter By Client:</small>
+					<dl class="dropdown">
+						<dt>
+							<a>
+								<span>All</span>
+							</a>
+						</dt>
+						<dd>
+				      <ul class="filter" id="filters">
+		           <?php if (!empty($term_list)) { 
+		               wp_list_categories(array(
+		                 'title_li' => '', 
+		                 'include' => $term_list, 
+		                 'taxonomy' => 'filter', 
+										 'child_of' => '12',
+		                 'show_option_none'   => '', 
+		                 'walker' => new Themewich_Walker_Portfolio_Filter()
+		                 ));
+		            } ?>
+				      </ul> 
+						</dd>
+					</dl>
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+  <div class="clear"></div>
   <!-- END Homepage Filter -->
 
   <!-- Grid Area -->
@@ -107,6 +156,7 @@ $term_list = implode(',', array_unique($term_list));
       <div class="clear"></div>     
   </div>
   <!-- END Grid Area -->
+	<div class="message-div"></div>
     
   <!-- Pagination -->
   <?php if (get_next_posts_link()) : ?>
@@ -143,24 +193,34 @@ function pageload(hash) {
 		jQuery(this).removeClass('active');
 	});
 	jQuery(selector).addClass('active');
-	jQuery('.home-tope').isotope({ filter: filterthis });
+	jQuery('.home-tope').isotope({ 
+		filter: filterthis		
+	});
   if(hash == "") {
     jQuery('.filter li:first-child a').addClass('active');
   }
 }
 
 jQuery("ul.filter a").click(function(){
-	// 
+	/*
 	var hash = this.getAttribute('href');
 	hash = hash.replace(/^.*#/, '');
-	// moves to a new page. 
-	// pageload is called at once. 
 	jQuery.history.load(hash);
 	return false;
+	*/
 });
 
 jQuery(document).ready(function(){
+	
+
+	jQuery('.message-div').hide();
+	
+	jQuery('.filter1').find('ul').attr('data-filter-group','client');
+	jQuery('.filter2').find('ul').attr('data-filter-group','medium');
   jQuery.history.init(pageload);
+	
+  
+	
 });
 </script>
 <?php   

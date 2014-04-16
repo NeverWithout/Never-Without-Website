@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 	/*-----------------------------------------------------------------------------------*/
 	$images = $('a.tw-lightbox[href*=".jpg"], a.tw-lightbox[href*="jpeg"], a.tw-lightbox[href*=".png"], a.tw-lightbox[href*=".gif"]');
 	$notImages = $('a.tw-lightbox').not($images);
-
+  /*
 	$images.magnificPopup({
 		type:'image', 
 		closeBtnInside: true,
@@ -54,7 +54,7 @@ jQuery(document).ready(function($){
 
       fixedContentPos: false
     });
-
+  */
 
 	/*-----------------------------------------------------------------------------------*/
 	/* Tabs
