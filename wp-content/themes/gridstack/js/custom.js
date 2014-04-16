@@ -835,10 +835,10 @@ jQuery.noConflict();
                 var $buttonGroup = $this.parents('.dropdown ul');
                 var filterGroup = $buttonGroup.attr('data-filter-group');
                 var $msgDiv = $('.message-div');
-                var $clientSelectedname = $(".filter1 span.selected").html();
+                var $clientSelectedname = $(".filter1 span.selected").html().trim();;
                 var $clientSelected = $clientSelectedname.toLowerCase().replace(/ /g, '-');
                 //var $clientSelected = "."+$clientSelected;
-                var $mediumSelectedname = $(".filter2 span.selected").html();
+                var $mediumSelectedname = $(".filter2 span.selected").html().trim();;
                 var $mediumSelected = $mediumSelectedname.toLowerCase().replace(/ /g, '-');
                 // set filter for group
                 filters[ filterGroup ] = $this.attr('data-filter');
@@ -853,7 +853,7 @@ jQuery.noConflict();
                 });                
                 if ( !$container.data('isotope').$filteredAtoms.length ) {
                   $msgDiv.empty();
-                  $msgDiv.append("<p>There are no results in these categories. Would you like to view <a class='cAnchor' href='#' data-filter='."+$clientSelected+"'>"+$clientSelectedname+"</a> or <a class='mAnchor' href='#' data-filter='"+$mediumSelected+"'>"+$mediumSelectedname+"</a>?</p>");
+                  $msgDiv.append("<p>There are no results in these categories. Would you like to view <a class='cAnchor' href='#' data-filter='."+$clientSelected+"'>"+$clientSelectedname+"</a> or <a class='mAnchor' href='#' data-filter='."+$mediumSelected+"'>"+$mediumSelectedname+"</a>?</p>");
                   var cAnchor = $(".message-div .cAnchor");
                   var mAnchor = $(".message-div .mAnchor");
                   
