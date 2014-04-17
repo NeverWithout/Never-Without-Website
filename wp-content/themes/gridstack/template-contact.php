@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
 			 popup: false, 
 			 flat: true, 
 			 icon: { 
-				 image: "/wp-content/uploads/2013/11/marker.png", 
+				 image: "/v6/Never-Without-Website/wp-content/uploads/2013/11/marker.png", 
 				 iconsize: [121, 49], 
 				 iconanchor: [42, 35], 
 				 shadowsize: [32, 37], 
