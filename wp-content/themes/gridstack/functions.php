@@ -1707,4 +1707,11 @@ if (!function_exists('themewich_add_field_automatically')) :
     add_action('publish_portfolio', 'themewich_add_field_automatically');
     add_action('publish_post', 'themewich_add_field_automatically');
 endif;
+/* SVG Mimetype addition */
+function custom_mtypes( $m ){
+    $m['svg'] = 'image/svg+xml';
+    $m['svgz'] = 'image/svg+xml';
+    return $m;
+}
+add_filter( 'upload_mimes', 'custom_mtypes' );
 ?>
