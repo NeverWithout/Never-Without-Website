@@ -104,7 +104,6 @@ jQuery(document).ready(function($) {
 		 markers: [{
 			 latitude: 33.80136904560602, 
 			 longitude: -84.4101580343933, 
-			 html: "<h1>WE ARE HERE</h1>", 
 			 popup: false, 
 			 flat: true, 
 			 icon: { 
