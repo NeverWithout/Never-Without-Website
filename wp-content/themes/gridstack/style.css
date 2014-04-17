@@ -13,7 +13,102 @@
 	version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
 
 -----------------------------------------------------------------------------------*/
+/* Pushy */
+/*! Pushy - v0.9.1 - 2013-9-16
+* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+* https://github.com/christophery/pushy/
+* by Christopher Yee */
 
+/* Menu Appearance */
+
+.pushy{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    background: #f8f8f8;
+    font-size: 0.9em;
+    font-weight: bold;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+}
+
+.pushy a{
+    display: block;
+    color: #666666;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    text-decoration: none;
+}
+
+.pushy a:hover{
+    background: #fff;
+    color: #666666;
+}
+
+/* Menu Movement */
+
+.pushy-left{
+    -webkit-transform: translate3d(-200px,0,0);
+    -moz-transform: translate3d(-200px,0,0);
+    -ms-transform: translate3d(-200px,0,0);
+    -o-transform: translate3d(-200px,0,0);
+    transform: translate3d(-200px,0,0);
+}
+
+.pushy-open{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.container-push, .push-push{
+    -webkit-transform: translate3d(200px,0,0);
+    -moz-transform: translate3d(200px,0,0);
+    -ms-transform: translate3d(200px,0,0);
+    -o-transform: translate3d(200px,0,0);
+    transform: translate3d(200px,0,0);
+}
+
+/* Menu Transitions */
+
+.pushy, #container, .push{
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -moz-transition: -moz-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -o-transition: -o-transform .2s cubic-bezier(.16, .68, .43, .99);
+    transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+    /* improves performance issues on mobile*/
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+/* Site Overlay */
+
+.site-overlay{
+    display: none;
+}
+
+.pushy-active .site-overlay{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    z-index: 9999;
+}
+
+/* Example Media Query */
+
+@media screen and (max-width: 768px){
+    .pushy{
+        font-size: 1.0em;
+    }
+}
 /*-----------------------------------------------------------------------------------*/
 /*  *Reset
 /*-----------------------------------------------------------------------------------*/
@@ -42,6 +137,11 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
    display: block;
+}
+html, body{
+  overflow-x: hidden; /* prevents horizontal scroll bars */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* disable webkit tap highlight */
+  height: 100%; /* fixes focus scrolling in Safari (OS X) */
 }
 body {
    line-height: 1;
@@ -3756,6 +3856,7 @@ ul.sf-menu li li li.sfHover ul {
  
 /* #Mobile Navigation
 ================================================== */
+/*
 .mobilenavcontainer {
    width: 100%;
    position: static;
@@ -3763,6 +3864,7 @@ ul.sf-menu li li li.sfHover ul {
    display:none;
    margin-bottom: 30px;
 }
+
 .mobilebutton {
   display:none; 
   margin-top: -15px;
@@ -3775,7 +3877,6 @@ ul.sf-menu li li li.sfHover ul {
   -webkit-transition: height .25s, line-height .25s, background .25s, visibility .25s;
   transition: height .25s, line-height .25s, background .25s, visibility .25s;
 }
-/* Mobile Navigation */
 .mobilenavigation {
   width: 420px;
   margin: auto; 
@@ -3792,105 +3893,19 @@ ul#mobilenav, #mobilenav li {
 #mobilenav li li a.display {
   padding-left: 20px;
 }
-ul#mobilenav ul {
+*/
+.menu-btn{
+  display: none;
+  width: 100px;
+  float: left;
+  margin: 40px 0 0 20px;
+}
+ul#mobilenav li {
   margin:0;
 }
-ul#mobilenav {
-  margin: 0;
-  position: relative;
-  z-index: 1000;
-  width:100%;
-}
 #mobilenav a {
-  position:relative;
-  display:block;
-  overflow: hidden;
-  height: 0;
-  padding: 5px 5px;
-  border-bottom: 1px dotted #dcdcdc;
-  border-color: rgba(0,0,0,.15);
-  text-align: left;
-  height: 0;
-  overflow: hidden;
-  padding: 0;
-  z-index: 1000;
-  border-width:0;
-  font-size:12px;
-  line-height: 18px;
-  color:#333;
-  background: url(images/rightarrow.png) 95% 48% no-repeat;
-}
-#mobilenav a:hover {
-    background: #f2f2f2 url(images/rightarrow.png) 97% 48% no-repeat;
-}
-#mobilenav:target a, #mobilenav a.display{
-  border-bottom-width:1px;
-  height:20px;
-  line-height: 18px;
-  padding: 13px 5px 10px 5px;
-}
-#jump { 
-  z-index: 10;
-  background:#333 url(images/downarrow.png) 95% 50% no-repeat;
-  width: 390px;
-  height: auto;
-  display: block;
-  padding: 15px;
-  height:15px;
-  margin: auto;
-  text-align: left;
-  position: relative;
-  font-size: 14px;
-  line-height: 14px;
-  color: #fff;
-  }
-a#jump:hover {
-  background:#444 url(images/downarrow.png) 95% 50% no-repeat;
-}
-#mobilenav {
-  /* the nav sits behind the menu button */
-  z-index: 1000;
-}
-#mobilenav:target {
-  /* unless it's showing */
-  z-index: 1001;
-}
-#mobilenav:target a {
-  /* make nav links sit up a level */
-  position: relative;
-  z-index: 1;
-}
-#back {
-  position:relative; 
-}
-#back a {
-  background:#333 url(images/uparrow.png) 95% 45% no-repeat;
-  border: 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 11;
-  margin-top: 0px;
-  border-width:0;
-  color:#fff;
-  transition:none;
-  -webkit-transition: none;
-  -moz-transition:none;
-  -o-transition:none;
-}
-#back a:hover {
-  background:#444 url(images/uparrow.png) 95% 45% no-repeat;
-}
-#mobilenav:target #back a, #mobilenav #back a.display {
-  border-width:1px;
-  height:auto;
-  padding: 15px;
-  font-size: 14px;
-  line-height: 14px;
-  height: 15px;
-  margin-top: -44px;
-}
 
+}
 /*-----------------------------------------------------------------------------------*/
 /*  *BxSlider
 /*-----------------------------------------------------------------------------------*/
@@ -6410,6 +6425,9 @@ span.rss-date {
 /*  *Portrait size to standard 960 (devices and browsers)
 /*-----------------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+  .menu-btn{
+    display: none;
+  }
   .top-nav{
     position: relative !important;
   }
@@ -6525,7 +6543,7 @@ span.rss-date {
 /*-----------------------------------------------------------------------------------*/
 
 @media only screen and (max-width: 767px) {
-	
+	.menu-btn{display: block;}
 	/* Disable on mobile sizes */
   .full-bg-image {
     padding-left: 0;
@@ -6856,7 +6874,7 @@ span.rss-date {
 /*  *Mobile Landscape Size to Portrait (devices and browsers)
 /*-----------------------------------------------------------------------------------*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	
+	.menu-btn{display: block;}
   /* Full Slideshow Changes */
   .single-slideshow.full {
   	margin-left: 	-100px;
@@ -6949,6 +6967,10 @@ span.rss-date {
     float: none;
     clear: both;
   } 
+  #sitecontainer .top-nav #logo{
+    width: 70px !important;
+    float: right;
+  }
   #logo img{
     margin: 0 auto;
   }
@@ -7093,7 +7115,7 @@ span.rss-date {
     float: none;
   }
   .og-grid li{
-    width: 100%;    
+    /*width: 100%;    */
     height: auto;
     margin: 0 0 10px 0;
   }
@@ -7126,7 +7148,10 @@ span.rss-date {
     float: none;
     clear: both;
   }  
-
+  #sitecontainer .top-nav #logo{
+    width: 70px !important;
+    float: right;
+  }
   #logo img{
     margin: 0 auto;
   }

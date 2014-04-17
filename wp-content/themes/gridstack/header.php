@@ -97,84 +97,65 @@ wp_head(); ?>
   </div>
 </noscript>
 
-<!-- Preload Images 
-	================================================== -->
-<div id="preloaded-images"> 
-  <?php $templatedirectory = get_template_directory_uri(); ?>
-  <img src="<?php echo $templatedirectory;?>/images/sprites.png" width="1" height="1" alt="Image" /> 
-</div>
 
+
+<!-- Mobile Navigation -->
+     <div class="pushy pushy-left">
+      <?php if ( has_nav_menu( 'main_nav_menu' ) ) { /* if menu location 'Top Navigation Menu' exists then use custom menu */ ?>
+              <?php wp_nav_menu( array('menu' => 'Main Navigation Menu', 'theme_location' => 'main_nav_menu', 'items_wrap' => '<ul id="mobilenav">%3$s</ul>')); ?>
+          <?php } else { /* else use wp_list_pages */?>
+              <ul class="sf-menu sf-vertical">
+                  <?php wp_list_pages( array('title_li' => '','sort_column' => 'menu_order', )); ?>
+              </ul>
+          <?php } ?>
+      </div> 
+<!-- END Mobile Navigation -->
+<div class="site-overlay"></div>
 <!-- Begin Site
   ================================================== -->
-  <div class="top-nav">
-
-    <!-- Scroll to Top Button -->
-    <div class="top"> 
-      <a href="#">
-      <span class="scrolltop">
-          <span>
-              <?php _e('Top', 'framework'); ?>
-          </span>
-      </span>
-      </a>
-    </div>
-    <!-- End Scroll to Top Button -->
-
-    <div class="container verticalcenter">
-    	<div class="container_row">
-            <div class="cell verticalcenter">
-            
-            	<!-- Logo -->
-                <div class="five columns" id="logo">
-                <?php echo is_front_page() ? '<h1>' : '<h2>'; ?>
-                    <a href="<?php echo home_url(); ?>">
-                        <?php if ( $logo = of_get_option('of_logo') ) { ?>
-                        <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-                        <?php } else { bloginfo( 'name' );} ?>
-                        </a> 
-                 <?php echo is_front_page() ? '</h1>' : '</h2>'; ?> 
-                </div>
-                <!-- END Logo -->
-                
-            </div>
-            <div class="cell verticalcenter menucell">
-            
-            	<!-- Menu -->
-                <div class="eleven columns" id="menu">
-                   <?php if ( has_nav_menu( 'main_nav_menu' ) ) { /* if menu location 'Main Navigation Menu' exists then use custom menu */ ?>
-                       <?php wp_nav_menu( array('menu' => 'Main Navigation Menu', 'theme_location' => 'main_nav_menu', 'menu_class' => 'sf-menu')); ?>
-                    <?php } else { /* else use wp_list_pages */?>
-                    <ul class="sf-menu">
-                        <?php wp_list_pages( array('title_li' => '','sort_column' => 'menu_order')); ?>
-                    </ul>
-                    <?php } ?> 
-                </div>
-                <!-- END Menu -->
-                
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </div>
-
-  <!-- Mobile Navigation -->
-  <div class="mobilenavcontainer"> 
-    <?php $menutext = of_get_option('of_menu_text');
-     if ($menutext == ''){ $menutext = __('Navigation', 'framework'); } ?>
-   <a id="jump" href="#mobilenav" class="scroll"><?php echo  $menutext; ?></a>
-   <div class="clear"></div>
-       <div class="mobilenavigation">
-        <?php if ( has_nav_menu( 'main_nav_menu' ) ) { /* if menu location 'Top Navigation Menu' exists then use custom menu */ ?>
-                <?php wp_nav_menu( array('menu' => 'Main Navigation Menu', 'theme_location' => 'main_nav_menu', 'items_wrap' => '<ul id="mobilenav"><li id="back"><a href="#top" class="menutop">'. __('Hide Navigation', 'framework') . '</a></li>%3$s</ul>')); ?>
-            <?php } else { /* else use wp_list_pages */?>
-                <ul class="sf-menu sf-vertical">
-                    <?php wp_list_pages( array('title_li' => '','sort_column' => 'menu_order', )); ?>
-                </ul>
-            <?php } ?>
-        </div> 
-    <div class="clear"></div>
-  </div>
-  <!-- END Mobile Navigation -->
-  
-  <div class="loading"></div>
   <div id="sitecontainer">
+		
+		<div class="loading"></div>
+		<!-- Preload Images 
+			================================================== -->
+		<div id="preloaded-images"> 
+		  <?php $templatedirectory = get_template_directory_uri(); ?>
+		  <img src="<?php echo $templatedirectory;?>/images/sprites.png" width="1" height="1" alt="Image" /> 
+		</div>
+	  <div class="top-nav">
+	    <div class="container verticalcenter">
+	    	<div class="container_row">
+	            <div class="cell verticalcenter">
+            		<div class="menu-btn">&#9776; Menu</div>
+	            	<!-- Logo -->
+	                <div class="five columns" id="logo">
+	                <?php echo is_front_page() ? '<h1>' : '<h2>'; ?>
+	                    <a href="<?php echo home_url(); ?>">
+	                        <?php if ( $logo = of_get_option('of_logo') ) { ?>
+	                        <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+	                        <?php } else { bloginfo( 'name' );} ?>
+	                        </a> 
+	                 <?php echo is_front_page() ? '</h1>' : '</h2>'; ?> 
+	                </div>
+	                <!-- END Logo -->									
+                
+	            </div>
+	            <div class="cell verticalcenter menucell">
+            
+	            	<!-- Menu -->
+	                <div class="eleven columns" id="menu">
+	                   <?php if ( has_nav_menu( 'main_nav_menu' ) ) { /* if menu location 'Main Navigation Menu' exists then use custom menu */ ?>
+	                       <?php wp_nav_menu( array('menu' => 'Main Navigation Menu', 'theme_location' => 'main_nav_menu', 'menu_class' => 'sf-menu')); ?>
+	                    <?php } else { /* else use wp_list_pages */?>
+	                    <ul class="sf-menu">
+	                        <?php wp_list_pages( array('title_li' => '','sort_column' => 'menu_order')); ?>
+	                    </ul>
+	                    <?php } ?> 
+	                </div>
+	                <!-- END Menu -->
+                
+	            </div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
+	  </div>
