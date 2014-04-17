@@ -100,7 +100,7 @@ wp_head(); ?>
 
 
 <!-- Mobile Navigation -->
-     <div class="pushy pushy-left">
+     <div class="pushy pushy-right">
       <?php if ( has_nav_menu( 'main_nav_menu' ) ) { /* if menu location 'Top Navigation Menu' exists then use custom menu */ ?>
               <?php wp_nav_menu( array('menu' => 'Main Navigation Menu', 'theme_location' => 'main_nav_menu', 'items_wrap' => '<ul id="mobilenav">%3$s</ul>')); ?>
           <?php } else { /* else use wp_list_pages */?>

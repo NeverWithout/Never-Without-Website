@@ -31,6 +31,7 @@
     font-size: 0.9em;
     font-weight: bold;
     overflow: auto;
+    right: 0;
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 }
 
@@ -58,6 +59,14 @@
     transform: translate3d(-200px,0,0);
 }
 
+.pushy-right{
+    -webkit-transform: translate3d(200px,0,0);
+    -moz-transform: translate3d(200px,0,0);
+    -ms-transform: translate3d(200px,0,0);
+    -o-transform: translate3d(200px,0,0);
+    transform: translate3d(200px,0,0);
+}
+
 .pushy-open{
     -webkit-transform: translate3d(0,0,0);
     -moz-transform: translate3d(0,0,0);
@@ -67,11 +76,11 @@
 }
 
 .container-push, .push-push{
-    -webkit-transform: translate3d(200px,0,0);
-    -moz-transform: translate3d(200px,0,0);
-    -ms-transform: translate3d(200px,0,0);
-    -o-transform: translate3d(200px,0,0);
-    transform: translate3d(200px,0,0);
+  -webkit-transform: translate3d(-200px,0,0);
+  -moz-transform: translate3d(-200px,0,0);
+  -ms-transform: translate3d(-200px,0,0);
+  -o-transform: translate3d(-200px,0,0);
+  transform: translate3d(-200px,0,0);
 }
 
 /* Menu Transitions */
@@ -93,13 +102,13 @@
 }
 
 .pushy-active .site-overlay{
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 200px;
-    z-index: 9999;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 200px;
+  bottom: 0;
+  left: 0px;
+  z-index: 9999;
 }
 
 /* Example Media Query */
@@ -3897,7 +3906,7 @@ ul#mobilenav, #mobilenav li {
 .menu-btn{
   display: none;
   width: 100px;
-  float: left;
+  float: right;
   margin: 40px 0 0 20px;
 }
 ul#mobilenav li {
@@ -6969,7 +6978,8 @@ span.rss-date {
   } 
   #sitecontainer .top-nav #logo{
     width: 70px !important;
-    float: right;
+    float: left;
+    margin: 20px;
   }
   #logo img{
     margin: 0 auto;
@@ -7150,7 +7160,8 @@ span.rss-date {
   }  
   #sitecontainer .top-nav #logo{
     width: 70px !important;
-    float: right;
+    float: left;
+    margin: 20px;
   }
   #logo img{
     margin: 0 auto;
