@@ -4435,6 +4435,7 @@ ul li {
 }
 .single-portfolio .share p{
   font-size: 13px;
+  margin: 0;
 }
 .single-portfolio .share p a{
   color: #666;
