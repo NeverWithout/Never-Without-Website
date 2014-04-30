@@ -20,7 +20,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
               <div class="tw-column tw-one-half tw-column-last ">
                 <?php the_field('left_content'); ?>
               </div><div style="clear:both;"></div>
-              <div class="tw-column tw-one-whole">
+              <div class="tw-column tw-one-whole about">
                 <img src="<?php the_field('image1'); ?>" />
                 <img src="<?php the_field('image2'); ?>" />
                 <img src="<?php the_field('image3'); ?>" />

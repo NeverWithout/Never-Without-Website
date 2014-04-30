@@ -11,12 +11,91 @@ jQuery.noConflict();
 (function( $ ){
 	"use strict";
 
-
   /*! Pushy - v0.9.1 - 2013-9-16
   * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
   * https://github.com/christophery/pushy/
-  * by Christopher Yee */$(function(){function h(){t.toggleClass(o);e.toggleClass(s);n.toggleClass(u);r.toggleClass(a)}function p(){t.addClass(o);e.animate({left:"0px"},l);n.animate({left:c},l);r.animate({left:c},l)}function d(){t.removeClass(o);e.animate({left:"-"+c},l);n.animate({left:"0px"},l);r.animate({left:"0px"},l)}var e=$(".pushy"),t=$("body"),n=$("#sitecontainer"),r=$(".push"),i=$(".site-overlay"),s="pushy-left pushy-open",o="pushy-active",u="container-push",a="push-push",f=$(".menu-btn, .pushy a"),l=200,c=e.width()+"px";if(Modernizr.csstransforms3d){f.click(function(){h()});i.click(function(){h()})}else{e.css({left:"-"+c});n.css({"overflow-x":"hidden"});var v=!0;f.click(function(){if(v){p();v=!1}else{d();v=!0}});i.click(function(){if(v){p();v=!1}else{d();v=!0}})}});
+  * by Christopher Yee */
+  $(function () {
+      function h() {
+          t.toggleClass(o);
+          e.toggleClass(s);
+          n.toggleClass(u);
+          r.toggleClass(a)
+      }
 
+      function p() {
+          t.addClass(o);
+          e.animate({
+              left: "0px"
+          }, l);
+          n.animate({
+              left: c
+          }, l);
+          r.animate({
+              left: c
+          }, l)
+      }
+
+      function d() {
+          t.removeClass(o);
+          e.animate({
+              left: "-" + c
+          }, l);
+          n.animate({
+              left: "0px"
+          }, l);
+          r.animate({
+              left: "0px"
+          }, l)
+      }
+      var e = $(".pushy"),
+          t = $("body"),
+          n = $("#container"),
+          r = $(".push"),
+          i = $(".site-overlay"),
+          s = "pushy-left pushy-open",
+          o = "pushy-active",
+          u = "container-push",
+          a = "push-push",
+          f = $(".menu-btn, .pushy a"),
+          l = 200,
+          c = e.width() + "px";
+      if (Modernizr.csstransforms3d) {
+          f.click(function () {
+              h()
+          });
+          i.click(function () {
+              h()
+          })
+      } else {
+          e.css({
+              left: "-" + c
+          });
+          n.css({
+              "overflow-x": "hidden"
+          });
+          var v = !0;
+          f.click(function () {
+              if (v) {
+                  p();
+                  v = !1
+              } else {
+                  d();
+                  v = !0
+              }
+          });
+          i.click(function () {
+              if (v) {
+                  p();
+                  v = !1
+              } else {
+                  d();
+                  v = !0
+              }
+          })
+      }
+  });
+  
 	/**
 	 * Converts html image to full fixed background
 	 * @since v1.0
@@ -635,7 +714,7 @@ jQuery.noConflict();
 							}, function() {
 								$('body').matchHeight(); 
 							});
-							
+						
 							// In case it fires too soon due to css3 animations
 							$itemContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
 								if ($itemContainer.hasClass('isotope')) {
@@ -1352,10 +1431,10 @@ jQuery.noConflict();
 		
 		// Run the theme-specific functions
 		$('img.parallaximg').parallaxImg();
-		$('.top-nav').themewichStickyNav(); 
+		//$('.top-nav').themewichStickyNav(); 
 		$('body').addVideoWrap();
 		//$('body').mobileNav();
-		$('.top').scrollToTop();
+		//$('.top').scrollToTop();
 		$('body').themewichHovers();
 		$('.controls a').themewichHoverHelper();
 	}

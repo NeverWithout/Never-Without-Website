@@ -149,10 +149,7 @@ function pageload(hash) {
 	});
 	jQuery(selector).addClass('active');
 	jQuery('.home-tope').isotope({ 
-		filter: filterthis,
-		masonry: {
-			cornerStampSelector: 'div.filter'
-		}
+		filter: filterthis
 	});
   if(hash == "") {
     jQuery('.filter li:first-child a').addClass('active');

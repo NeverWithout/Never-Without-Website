@@ -195,7 +195,7 @@
   		support = Modernizr.csstransitions,
   		// default settings
   		settings = {
-  			minHeight : 700,
+  			minHeight : 500,
   			speed : 350,
   			easing : 'ease'
   		};
@@ -272,6 +272,7 @@
   			var preview = $.data( this, 'preview' );
   			if( typeof preview != 'undefined' ) {
   				hidePreview();
+          jQuery('ul.og-grid li a').css('opacity', '1');
   			}
 
   		} );
@@ -413,7 +414,7 @@
 
   			setTimeout( $.proxy( function() {	
   				// set the height for the preview and the item
-  				this.setHeights();
+  				this.setHeights();          
   				// scroll to position the preview in the right place
   				this.positionPreview();
   			}, this ), 25 );

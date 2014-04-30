@@ -162,7 +162,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
                     <p><?php _e('Please try again.', 'framework'); ?></p>
                 </div>
 			<?php } ?>
-			
+						<a class="contact_address" href="<?php the_field('address_url'); ?>"><?php the_field('address'); ?></a>
             <!-- Contact Form -->
             <div class="contactcontent">
                 <div id="contact-form">

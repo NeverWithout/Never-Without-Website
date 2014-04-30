@@ -274,18 +274,19 @@
 
   		} );
 
-  		// on window resize get the windowÂ´s size again
+  		// on window resize get the window's size again
   		// reset some values..
   		$window.on( 'debouncedresize', function() {
 			
   			scrollExtra = 0;
   			previewPos = -1;
-  			// save itemÂ´s offset
+  			// save item's offset
   			saveItemInfo();
   			getWinSize();
   			var preview = $.data( this, 'preview' );
   			if( typeof preview != 'undefined' ) {
   				hidePreview();
+          jQuery('ul.og-grid li a').css('opacity', '1');
   			}
 
   		} );

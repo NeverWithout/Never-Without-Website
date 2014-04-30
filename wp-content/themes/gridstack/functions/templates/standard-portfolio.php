@@ -26,7 +26,7 @@ if (is_single()) :
       <div class="container">
 
         <!-- Title -->
-          <div class="thirteen columns">
+          <div class="eleven columns">
              <h1 class="title"><?php the_title(); ?></h1>
               <?php if ($subheadline && $subheadline != '') { ?>
                  <h2 class="subtitle">
@@ -37,7 +37,7 @@ if (is_single()) :
           <!-- End Title -->
 
           <!-- Controls -->
-          <div class="three columns">
+          <div class="five columns">
               <?php get_template_part('functions/templates/postcontrols'); ?>
           </div>
           <!-- End Controls -->
