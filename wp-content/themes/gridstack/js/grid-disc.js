@@ -454,15 +454,23 @@
 
   			var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
   				itemHeight = winsize.height;
-
+        /*
   			if( heightPreview < settings.minHeight ) {
   				heightPreview = settings.minHeight;
   				itemHeight = settings.minHeight + this.$item.data( 'height' ) + marginExpanded;
   			}
-
-  			this.height = heightPreview;
-  			this.itemHeight = itemHeight;
-
+        */
+        if ($(window).width() < 1024 && $(window).width() > 480) {
+    			this.height = heightPreview;
+    			this.itemHeight = itemHeight*1.1;
+        } else if ($(window).width() < 480) {
+    			this.height = heightPreview;
+    			this.itemHeight = itemHeight*1.3;
+        } else {
+    			this.height = heightPreview;
+    			this.itemHeight = itemHeight*1.2;
+        }
+  			
   		},
   		setHeights : function() {
 
@@ -475,7 +483,7 @@
   				};
 
   			this.calcHeight();
-  			this.$previewEl.css( 'height', this.height );
+  			this.$previewEl.css( 'height', this.itemHeight );
   			this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 
   			if( !support ) {
@@ -486,7 +494,7 @@
   		positionPreview : function() {
 
   			// scroll page
-  			// case 1 : preview height + item height fits in windowÂ´s height
+  			// case 1 : preview height + item height fits in window's height
   			// case 2 : preview height + item height does not fit in windowÂ´s height and preview height is smaller than windowÂ´s height
   			// case 3 : preview height + item height does not fit in windowÂ´s height and preview height is bigger than windowÂ´s height
   			var position = this.$item.data( 'offsetTop' ),

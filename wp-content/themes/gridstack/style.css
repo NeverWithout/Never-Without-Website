@@ -6182,6 +6182,7 @@ span.rss-date {
 	margin: 10px 8px 8px 8px;
 	vertical-align: top;
 	/*height: 250px;*/
+  width: 218px;
 }
 .og-grid li:first-child{
   margin-left: 0;
