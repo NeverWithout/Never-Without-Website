@@ -3648,11 +3648,11 @@ p.loading {
   font-weight: bold !important;
   letter-spacing: 3px;
   font-weight: 800;
-}
-#logo img {
-  display:block;  
   width: 70px !important;
   height: 55px !important;
+}
+#logo img {
+  display:block;    
 }
 
 
