@@ -3638,9 +3638,7 @@ p.loading {
   line-height: 28px;
   color: #333;
   letter-spacing: 1px;
-  margin-bottom:0;
-  width: 70px !important;
-  height: 55px !important;
+  margin-bottom:0; 
 }
 #logo a {
   text-decoration: none;
@@ -3652,8 +3650,10 @@ p.loading {
   font-weight: 800;
   
 }
-#logo img {
-  display:block;    
+#logo #sitecontainer img {
+  display:block;   
+  width: 70px !important;
+  height: 55px !important; 
 }
 
 
