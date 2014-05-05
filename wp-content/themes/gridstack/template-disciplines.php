@@ -24,7 +24,7 @@ get_template_part('functions/templates/page-title-rotator'); ?>
                       <?php while ( have_rows('discipline') ) : the_row(); ?>
                         <li>
                           <a href="<?php the_permalink() ?>" data-largesrc="<?php the_sub_field('image'); ?>" data-title="<?php the_sub_field('discipline_name'); ?>" data-description="<?php the_sub_field('description'); ?>" data-bulletpoints="<?php the_sub_field('bullet_points'); ?>">
-                            <img src="<?php the_sub_field('image'); ?>" alt="img01" />
+                            <img src="<?php the_sub_field('image'); ?>" alt="img01" onerror="this.src=<?php the_sub_field('svg_fallback'); ?>;this.onerror=null;" />
                             <h4><?php the_sub_field('discipline_name'); ?></h4>
                           </a>
                         </li>
