@@ -275,7 +275,14 @@
           jQuery('ul.og-grid li a').css('opacity', '1');
   			}
 
-  		} );
+  		});
+      
+      if (!Modernizr.svg) {
+        $('img[src$=svg]').each(function(index, item) {
+          imagePath = $(item).attr('src');
+          $(item).attr('src',imagePath.slice(0,-3)+'png');
+        });
+      }
 
   	}
 
