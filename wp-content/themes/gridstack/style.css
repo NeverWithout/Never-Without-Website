@@ -725,6 +725,7 @@ img.scale-with-grid {
   height: auto !important; 
 }
 #sitecontainer img {
+  /*max-width: 100% !important;*/
   height: auto;
 }
 #sitecontainer .about img{
@@ -3649,10 +3650,9 @@ p.loading {
   font-weight: 800;
   
 }
-#logo #sitecontainer img {
+#logo img {
   display:block;   
-  width: 70px !important;
-  height: 55px !important; 
+  zoom: 100%;
 }
 
 
