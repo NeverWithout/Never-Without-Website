@@ -22,8 +22,8 @@ width: 305px;
   width: 32%;
 }
 #footer #text-4{
-  width: 29%;
+  width: 29% !important;
 }
 #footer #text-3{
-  width: 20%;
+  width: 20% !important;
 }
