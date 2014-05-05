@@ -3651,7 +3651,8 @@ p.loading {
 }
 #logo img {
   /*display:block;  */
-  width: auto;
+  width: 70px;
+  height: 55px;
 }
 
 
