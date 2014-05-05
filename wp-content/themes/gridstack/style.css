@@ -857,8 +857,6 @@ sub {
   vertical-align:middle;  
 }
 .verticalcenter .cell.verticalcenter {
-  /*display: table-cell;
-  vertical-align: middle;*/
   float:none;
 }
 
