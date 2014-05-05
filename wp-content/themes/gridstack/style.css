@@ -725,8 +725,8 @@ img.scale-with-grid {
   height: auto !important; 
 }
 #sitecontainer img {
-  /*max-width: 100% !important;*/
-  height: auto;
+  /*max-width: 100% !important;
+  height: auto;*/
 }
 #sitecontainer .about img{
   width: 32.5%;
