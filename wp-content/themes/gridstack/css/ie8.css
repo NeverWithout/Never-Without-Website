@@ -21,9 +21,12 @@ width: 305px;
 #sitecontainer .about img{
   width: 32%;
 }
-#footer #text-4{
+.dark .tw-one-fourth{
+  width: 18%;
+}
+.dark #text-4{
   width: 29% !important;
 }
-#footer #text-3{
+.dark #text-3{
   width: 20% !important;
 }
