@@ -1002,8 +1002,8 @@ function what_js(){
 		wp_register_script('rslides', get_template_directory_uri() . '/js/rslides.min.js', 'jquery', true);
 		wp_enqueue_script('rslides');
 	}else if(is_page('work')){
-		wp_register_script('dropdown', get_template_directory_uri() . '/js/dropdown.js', 'jquery', true);
-		wp_enqueue_script('dropdown');	
+		//wp_register_script('dropdown', get_template_directory_uri() . '/js/dropdown.js', 'jquery', true);
+		//wp_enqueue_script('dropdown');	
 	}
 }
 

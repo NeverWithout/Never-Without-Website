@@ -48,10 +48,10 @@ $post_object = get_post_type_object( $post->post_type );
             </span>
         <?php endif; ?>
         <span class="nextpost">
-            <?php next_post_link('%link', __('Next Post', 'framework')); ?>
+            <?php next_post_link('%link', __('Next', 'framework')); ?>
         </span>
         <span class="prevpost">
-            <?php previous_post_link('%link', __('Previous Post', 'framework')); ?> 
+            <?php previous_post_link('%link', __('Previous', 'framework')); ?> 
         </span> 
         <div class="clear"></div>
         <p class="hoverhelper"></p>

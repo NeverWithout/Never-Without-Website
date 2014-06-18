@@ -57,35 +57,39 @@ $term_list = implode(',', array_unique($term_list));
 	    <div class="sixteen columns">
 			  <div class="filter filter1">			    
 		      <small>Filter By Client:</small>
-		      <select class="filter dropdown" id="filters filter1" data-filter-group="client">
-	           <option value="" data-filter="" selected><?php _e('All', 'framework');?></option>
-	           <?php if (!empty($term_list)) { 
-	               wp_list_categories(array(
-	                 'title_li' => '', 
-	                 'include' => $term_list, 
-	                 'taxonomy' => 'filter', 
-									 'child_of' => '21',
-	                 'show_option_none'   => '', 
-	                 'walker' => new Themewich_Walker_Portfolio_Filter()
-	                 ));
-	            } ?>
-		      </select> 	     
+					<div class="select-style css-select-moz">
+			      <select class="filter dropdown" id="filters filter1" data-filter-group="client">
+		           <option class="segment-2" value=".all" data-filter=".all"><?php _e('All', 'framework');?></option>
+		           <?php if (!empty($term_list)) { 
+		               wp_list_categories(array(
+		                 'title_li' => '', 
+		                 'include' => $term_list, 
+		                 'taxonomy' => 'filter', 
+										 'child_of' => '21',
+		                 'show_option_none'   => '', 
+		                 'walker' => new Themewich_Walker_Portfolio_Filter()
+		                 ));
+		            } ?>
+			      </select> 	    
+					</div> 
 			  </div>      
 			  <div class="filter filter2">			    
 		      <small>Filter By Medium:</small>
-		      <select class="filter dropdown" id="filters filter2" data-filter-group="medium">
-	           <option value="" data-filter="" selected><?php _e('All', 'framework');?></option>
-	           <?php if (!empty($term_list)) { 
-	               wp_list_categories(array(
-	                 'title_li' => '', 
-	                 'include' => $term_list, 
-	                 'taxonomy' => 'filter', 
-									 'child_of' => '12',
-	                 'show_option_none'   => '', 
-	                 'walker' => new Themewich_Walker_Portfolio_Filter()
-	                 ));
-	            } ?>
-		      </select> 	     
+					<div class="select-style css-select-moz">
+			      <select class="filter dropdown" id="filters filter2" data-filter-group="medium">
+		           <option class="segment-2" value=".all" data-filter=".all"><?php _e('All', 'framework');?></option>
+		           <?php if (!empty($term_list)) { 
+		               wp_list_categories(array(
+		                 'title_li' => '', 
+		                 'include' => $term_list, 
+		                 'taxonomy' => 'filter', 
+										 'child_of' => '12',
+		                 'show_option_none'   => '', 
+		                 'walker' => new Themewich_Walker_Portfolio_Filter()
+		                 ));
+		            } ?>
+			      </select> 	     
+					</div>
 			  </div>
 				<!--
 				<div class="filter">

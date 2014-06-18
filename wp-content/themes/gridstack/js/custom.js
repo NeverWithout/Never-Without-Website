@@ -875,9 +875,9 @@ jQuery.noConflict();
                   $('.filter1 select option').each(function(){
                     var text = $(this).html();
                     if (text.match(anchor3)){
-                      var idx = $(this).index();
-                      $('.filter1 select').easyDropDown('select', idx);
-                      $('.filter2 select').easyDropDown('select', 0);
+                      var idx = $(this).attr('data-filter');
+                      $('.filter1 select').val(idx);
+                      $('.filter2 select').val('.all');
                     }
                   });    
                    
@@ -893,9 +893,11 @@ jQuery.noConflict();
                   $('.filter2 select option').each(function(){
                     var text = $(this).html();
                     if (text.match(anchor4)){
-                      var idx = $(this).index();
-                      $('.filter2 select').easyDropDown('select', idx);
-                      $('.filter1 select').easyDropDown('select', 0);
+                      var idx = $(this).attr('data-filter');
+                      //$('.filter2 select').easyDropDown('select', idx);
+                      //$('.filter1 select').easyDropDown('select', 0);
+                      $('.filter2 select').val(idx);
+                      $('.filter1 select').val('.all');
                     }
                   }); 
                   $container.isotope({ 
@@ -947,9 +949,11 @@ jQuery.noConflict();
                     $('.filter1 ul li').each(function(){
                       var text = $(this).html();
                       if (text.match(anchor)){
-                        var idx = $(this).index();
-                        $('.filter1 .dropdown select').easyDropDown('select', idx);
-                        $('.filter2 .dropdown select').easyDropDown('select', 0);
+                        var idx = $(this).attr('data-filter');
+                        //$('.filter1 .dropdown select').easyDropDown('select', idx);
+                       // $('.filter2 .dropdown select').easyDropDown('select', 0);
+                       $('.filter1 select').val(idx);
+                       $('.filter2 select').val('.all');
                       }
                     });    
                      
@@ -964,10 +968,12 @@ jQuery.noConflict();
                     $('.filter2 ul li').each(function(){
                       var text = $(this).html();
                       if (text.match(anchor2)){
-                        var idx = $(this).index();
+                        var idx = $(this).attr('data-filter');
                         
-                        $('.filter2 .dropdown select').easyDropDown('select', idx);
-                        $('.filter1 .dropdown select').easyDropDown('select', 0);
+                       // $('.filter2 .dropdown select').easyDropDown('select', idx);
+                        //$('.filter1 .dropdown select').easyDropDown('select', 0);
+                        $('.filter2 select').val(idx);
+                        $('.filter1 select').val('.all');
                       }
                     }); 
                     

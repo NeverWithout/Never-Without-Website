@@ -287,7 +287,7 @@
   	}
 
   	function getWinSize() {
-  		winsize = { width : $window.width(), height : 460 };
+  		winsize = { width : $window.width(), height : 660 };
   	}
 
   	function showPreview( $item ) {
