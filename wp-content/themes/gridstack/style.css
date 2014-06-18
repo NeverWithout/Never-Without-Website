@@ -1748,7 +1748,7 @@ div.filtercontainer {
     font-family: "Roboto Slab", Sans-serif;
     font-size: 14px;
     color: #666;
-    padding: 5px 0;
+    padding: 5px;
 }
 @-moz-document url-prefix() {
 .css-select-moz{
